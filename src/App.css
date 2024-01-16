@@ -4,18 +4,6 @@
   padding: 2rem;
   text-align: center;
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
 .card {
   padding: 2em;
@@ -25,6 +13,9 @@
   color: #888;
 }
 header {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #ff000a;
   height: 100px;
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
@@ -56,4 +47,12 @@ footer{
   height: 100px;
   border: 1px solid #ff000a;
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
+}
+.Logo{
+  -webkit-text-stroke: solid 3px #ff2e36;
+  text-shadow: 0px 2px 50px #ff000a;
+  color: #991616;
+  font-family: Inter;
+  font-size: 50px;
+  margin: 10px;
 }
