@@ -34,5 +34,5 @@ jobs:
           server: ${{ vars.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          local-dir: build/ directory
+          local-dir: dist/praktyki2024/
           server-dir: ${{ vars.PATH }}
