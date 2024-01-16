@@ -19,6 +19,7 @@ function App() {
           <img className="minizdj" src="assets/gra4.png"></img>
         </div>
         <div className="container">
+          <img className="minizdj" src="assets/gra4.png"></img>
         </div>
       </section>
       <main>
