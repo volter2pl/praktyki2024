@@ -7,12 +7,16 @@ function App() {
       </header>
       <section>
         <div className="container">
+          <img className="minizdj" src="assets/gra1.png"></img>
         </div>
         <div className="container">
+          <img className="minizdj" src="assets/gra2.png"></img>
         </div>
         <div className="container">
+          <img className="minizdj" src="assets/gra3.png"></img>
         </div>
         <div className="container">
+          <img className="minizdj" src="assets/gra4.png"></img>
         </div>
         <div className="container">
         </div>

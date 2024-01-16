@@ -35,6 +35,9 @@ section{
   width: 140px;
   border: 1px solid #ff000a;
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main{
   height: 700px;
@@ -47,6 +50,10 @@ footer{
   height: 100px;
   border: 1px solid #ff000a;
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
+}
+.minizdj{
+  width: 130px;
+  height: 130px;
 }
 .Logo{
   -webkit-text-stroke: solid 3px #ff2e36;
