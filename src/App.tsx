@@ -5,9 +5,14 @@ import { useState } from 'react';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu
 
   const handleClick = () => {
     setMessage(<Witam />);
+  };
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle menu state
   };
 
   return (
@@ -32,14 +37,20 @@ function App() {
           {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
         </div>
       </section>
-      <main>
+      <main className={isMenuOpen ? 'menuOpen' : ''} style={{ backgroundColor: isMenuOpen ? 'white' : '' }}>
         {message}
+        {isMenuOpen && (
+          <div className="menu">
+            <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
+            <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
+          </div>
+        )}
       </main>
       <footer>
-        <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
+        <button className='changecolour' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
       </footer>
     </>
   )
 }
 
-export default App
+export default App;
