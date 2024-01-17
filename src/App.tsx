@@ -1,5 +1,5 @@
 import './App.css'
-import Witam from './gratest.tsx'
+import Witam from './statki.tsx'
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
 
