@@ -46,6 +46,6 @@ function changeTheme(){
         element.addEventListener("mouseout", () => { element.style.animation = "" });
       });
     }
-};
+}
 
 export default changeTheme;
