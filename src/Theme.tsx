@@ -30,6 +30,6 @@ function changeTheme(){
       });
       
     }
-};
+}
 
 export default changeTheme;
