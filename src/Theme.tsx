@@ -5,6 +5,8 @@ function changeTheme(){
     const sectionElements = document.querySelectorAll(".container") as NodeListOf<HTMLElement>;
     const logoElement = document.querySelector(".Logo") as HTMLElement;
     const buttonElement = document.querySelector(".changecolour") as HTMLElement;
+    const buttonElementSec = document.querySelector(".options") as HTMLElement;
+    const menu = document.querySelector(".menu") as HTMLElement;
 
     if (mainElement && headerElement && footerElement && sectionElements && logoElement && buttonElement) {
       const isViolet = mainElement.style.borderColor === "violet";
@@ -28,13 +30,21 @@ function changeTheme(){
       buttonElement.addEventListener("mouseover", () => { buttonElement.style.borderColor = "white" });
       buttonElement.addEventListener("mouseout", () => { isViolet ? buttonElement.style.borderColor = "#ff2e36" : buttonElement.style.borderColor = "violet"});
 
+      buttonElementSec.style.color = isViolet ? "" : "violet";
+      buttonElementSec.style.borderColor = isViolet ? "" : "violet";
+      buttonElementSec.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+      buttonElementSec.addEventListener("mouseover", () => { buttonElement.style.borderColor = "white" });
+      buttonElementSec.addEventListener("mouseout", () => { isViolet ? buttonElement.style.borderColor = "#ff2e36" : buttonElement.style.borderColor = "violet"});
+
+      menu.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+      menu.style.borderColor = isViolet ? "" : "violet";
+
       sectionElements.forEach((element) => {
         element.style.borderColor = isViolet ? "" : "violet";
         element.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
         element.addEventListener("mouseover", () => { element.style.animation = isViolet ? "" : "pulse-border-violet 1s infinite"; });
         element.addEventListener("mouseout", () => { element.style.animation = "" });
       });
-      
     }
 };
 

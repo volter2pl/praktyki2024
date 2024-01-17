@@ -40,14 +40,14 @@ function App() {
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
         {isMenuOpen && (
-          <div className="menu" style={{ backgroundColor: isMenuOpen ? 'white' : '' }}>
+          <div className="menu">
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
         )}
       </main>
       <footer>
-        <button className='changecolour' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
+        <button className='options' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
       </footer>
     </>
   )

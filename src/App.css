@@ -43,6 +43,7 @@ header {
   height: 100px;
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
   transition: border-color 0.25s;
+  border-radius: 8px;
 }
 section{
   margin-top: 20px;
@@ -63,6 +64,7 @@ section{
   justify-content: center;
   align-items: center;
   transition: border-color 0.25s;
+  border-radius: 8px;
 }
 .container:hover{
   animation: pulse-border-red 1s infinite;
@@ -76,6 +78,7 @@ main{
   border: 1px solid #ff000a;
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
   transition: border-color 0.25s;
+  border-radius: 8px;
 }
 footer{
   margin-top: 20px;
@@ -86,10 +89,12 @@ footer{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 8px;
 }
 .minizdj{
   width: 130px;
   height: 130px;
+  border-radius: 8px;
 }
 .Logo{
   -webkit-text-stroke: solid 3px #ff2e36;
@@ -100,7 +105,7 @@ footer{
   margin: 10px;
   transition: border-color 0.25s;
 }
-.changecolour{
+.changecolour,.options{
   color: #ff000a;
   background-color: rgb(31, 31, 31);
   border-radius: 8px;
@@ -110,7 +115,7 @@ footer{
   font-size: 1em;
   box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
 }
-.changecolour:hover{
+.changecolour:hover,.options:hover{
   border: 1px solid #ffffff;
   transition: border-color 0.10s;
 }
@@ -118,5 +123,7 @@ footer{
   width: 400px;
   height: 400px;
   border: 2px solid red;
-  background-color: white;
+  background-color: rgb(31, 31, 31);
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
 }
