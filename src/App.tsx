@@ -37,10 +37,10 @@ function App() {
           {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
         </div>
       </section>
-      <main className={isMenuOpen ? 'menuOpen' : ''} style={{ backgroundColor: isMenuOpen ? 'white' : '' }}>
+      <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
         {isMenuOpen && (
-          <div className="menu">
+          <div className="menu" style={{ backgroundColor: isMenuOpen ? 'white' : '' }}>
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
