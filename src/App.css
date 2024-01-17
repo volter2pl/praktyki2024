@@ -68,6 +68,9 @@ section{
   animation: pulse-border-red 1s infinite;
 }
 main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 700px;
   width: 100%;
   border: 1px solid #ff000a;
@@ -112,10 +115,6 @@ footer{
   transition: border-color 0.10s;
 }
 .menu{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 400px;
   height: 400px;
   border: 2px solid red;
