@@ -1,3 +1,26 @@
+@keyframes pulse-border-red {
+  0% {
+    border-color: #ffffff;
+  }
+  50% {
+    border-color: #ff000a;
+  }
+  100% {
+    border-color: #ffffff;
+  }
+}
+@keyframes pulse-border-violet {
+  0% {
+    border-color: #ffffff;
+  }
+  50% {
+    border-color: violet;
+  }
+  100% {
+    border-color: #ffffff;
+  }
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,6 +63,9 @@ section{
   justify-content: center;
   align-items: center;
   transition: border-color 0.25s;
+}
+.container:hover{
+  animation: pulse-border-red 1s infinite;
 }
 main{
   height: 700px;

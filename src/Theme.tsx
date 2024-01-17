@@ -11,13 +11,17 @@ function changeTheme(){
 
       mainElement.style.borderColor = isViolet ? "" : "violet";
       mainElement.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+
       headerElement.style.borderColor = isViolet ? "" : "violet";
       headerElement.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+
       footerElement.style.borderColor = isViolet ? "" : "violet";
       footerElement.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+
       logoElement.style.color = isViolet ? "" : "violet";
       logoElement.style.textShadow = isViolet ? "" : "0px 2px 50px rgba(255, 0, 255, 0.5)";
       logoElement.style.webkitTextStroke = isViolet ? "" : "solid 3px #ff2e36";
+
       buttonElement.style.color = isViolet ? "" : "violet";
       buttonElement.style.borderColor = isViolet ? "" : "violet";
       buttonElement.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
@@ -27,6 +31,8 @@ function changeTheme(){
       sectionElements.forEach((element) => {
         element.style.borderColor = isViolet ? "" : "violet";
         element.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+        element.addEventListener("mouseover", () => { element.style.animation = isViolet ? "" : "pulse-border-violet 1s infinite"; });
+        element.addEventListener("mouseout", () => { element.style.animation = "" });
       });
       
     }
