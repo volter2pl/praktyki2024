@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Witam from './gratest.tsx'
+import changeTheme from './Theme.tsx';
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState<React.ReactNode>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu
+
+  const handleClick = () => {
+    setMessage(<Witam />);
+  };
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <h1 className='Logo'>Gamezz Loader</h1>
+      </header>
+      <section>
+        <div className="container">
+          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={handleClick} ></img>
+        </div>
+        <div className="container">
+          {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
+        </div>
+        <div className="container">
+          {/*<img className="minizdj" src="src/assets/gra3.png" alt="gra3"></img>*/}
+        </div>
+        <div className="container">
+          {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}
+        </div>
+        <div className="container">
+          {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
+        </div>
+      </section>
+      <main className={isMenuOpen ? 'menuOpen' : ''} >
+        {message}
+        {isMenuOpen && (
+          <div className="menu">
+            <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
+            <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
+          </div>
+        )}
+      </main>
+      <footer>
+        <button className='options' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
+      </footer>
     </>
   )
 }
 
-export default App
+export default App;
