@@ -1,9 +1,9 @@
+import './statki/statki.css';
 import { Helmet } from 'react-helmet';
-import './statki.css';
-function witam() {
+function Statki() {
     return (
         <div className="tlo">
-            <Helmet><script src='statki.js'></script></Helmet>
+            <Helmet><script src='src/statki/statki.js'></script></Helmet>
             <div id="game-info">
                 <p>Turn: <span id="turn-display"></span></p>
                 <p>Info: <span id="info"></span></p>
@@ -25,4 +25,4 @@ function witam() {
     );
 }
 
-export default witam;
+export default Statki;

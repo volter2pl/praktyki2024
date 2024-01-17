@@ -1,5 +1,5 @@
 import './App.css'
-import Witam from './statki.tsx'
+import Statki from './Statki.tsx'
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
 
@@ -8,7 +8,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu
 
   const handleClick = () => {
-    setMessage(<Witam />);
+    setMessage(<Statki />);
   };
 
   const handleMenuClick = () => {
