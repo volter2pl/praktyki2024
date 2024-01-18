@@ -120,6 +120,7 @@ footer{
   transition: border-color 0.10s;
 }
 .menu{
+  display:none;
   position: absolute;
   width: 400px;
   height: 400px;

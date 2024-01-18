@@ -5,20 +5,20 @@ import { useState } from 'react';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu
+  const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
 
   const handleClick = () => {
     setMessage(<Statki />);
   };
-
+  
   const handleMenuClick = () => {
     const menu = document.querySelector(".menu") as HTMLElement;
-    if (menu.style.display === "none") {
-      menu.style.display = "block";
-    } else {
+    if (menu.style.display === "block") {
       menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
     }
-    setIsMenuOpen(!isMenuOpen);  //Toggle menu state
+    setIsMenuOpen(isMenuOpen);  //Toggle menu state
   };
 
   return (
