@@ -1,5 +1,5 @@
 
-function enigma() {
+function Nig() {
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
         "It is the mark of an educated mind to be able to entertain a thought without accepting it",
@@ -44,7 +44,7 @@ function enigma() {
     function losujLiczbeOd1Do10(): number {
         return Math.floor(Math.random() * 10);
     }
-    let wylosowane : String= cytaty[losujLiczbeOd1Do10()];
+    let wylosowane : string= cytaty[losujLiczbeOd1Do10()];
     wylosowane = wylosowane.toUpperCase();
     let koniec: string = "";
     for (let i = 0; i < wylosowane.length; i++) {
@@ -56,10 +56,12 @@ function enigma() {
             koniec += letter;
         }
     }
-    console.log(koniec);
-
+    
+    
 
     return koniec;
+    
+    
 }
 
-export default enigma;
+export default Nig;
