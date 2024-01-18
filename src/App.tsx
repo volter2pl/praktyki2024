@@ -1,6 +1,7 @@
 import './App.css'
 import Statki from './Statki.tsx'
 import changeTheme from './Theme.tsx';
+import enigma from './enigma.tsx';
 import { useState } from 'react';
 
 function App() {
@@ -50,7 +51,6 @@ function App() {
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
-        
       </main>
       <footer>
         <button className='options' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
