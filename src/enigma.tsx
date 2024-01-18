@@ -55,17 +55,29 @@ function Nig() {
         } else {
             koniec += letter;
         }
-    }
-    return (
-        function () {
-            <>
+}
+    function Contener() {
+        <>
+        
             <h3>{koniec}</h3>
-                <div>
-                    
-                </div>
-            </>
-        }
-    )
+    
+            <div className="Ang"></div>
+            <div className="Gre"></div>
+        </>
+
+        const A= document.querySelector(".Ang");
+        const G= document.querySelector(".Gre");
+        
+        for (let x = 0; x < letters.length; x++) {
+
+            const Btt = document.createElement("button");
+            Btt.setAttribute("className",'')
+            Btt.innerText = letters[x][0];
+            document.body.appendChild(Btt);
+
+        } 
+    }
+    return (Contener)
     
 }
 
