@@ -11,7 +11,11 @@ function enigma() {
         "I love democracy.",
         "Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you"
     ];
-
+    const letters : string[][] =[
+        ['A','Α']['B','β']['A','Α']['B','β']
+       
+    ]
+ 
     return cytaty;
 }
 
