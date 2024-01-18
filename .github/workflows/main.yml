@@ -16,8 +16,8 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
-        with: 
-          node-version: '14'
+        with:
+          node-version: '18.x'
 
       - name: Install Create React App
         run: npm install -g vite@latest
@@ -34,5 +34,5 @@ jobs:
           server: ${{ vars.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASS }}
-          local-dir: build/directory/
+          local-dir: dist/
           server-dir: ${{ vars.PATH }}
