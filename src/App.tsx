@@ -12,7 +12,13 @@ function App() {
   };
 
   const handleMenuClick = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+    const menu = document.querySelector(".menu") as HTMLElement;
+    if (menu.style.display === "none") {
+      menu.style.display = "block";
+    } else {
+      menu.style.display = "none";
+    }
+    setIsMenuOpen(!isMenuOpen);  //Toggle menu state
   };
 
   return (
@@ -39,12 +45,12 @@ function App() {
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-        {isMenuOpen && (
+        
           <div className="menu">
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
-        )}
+        
       </main>
       <footer>
         <button className='options' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
