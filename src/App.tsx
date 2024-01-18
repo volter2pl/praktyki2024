@@ -1,5 +1,6 @@
 import './App.css'
-import Statki from './Statki.tsx'
+import Statki from './Statki.tsx';
+import Saper from './Saper.tsx';
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
 
@@ -7,8 +8,11 @@ function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
 
-  const handleClick = () => {
+  const statkiHandleClick = () => {
     setMessage(<Statki />);
+  };
+  const saperHandleClick = () => {
+    setMessage(<Saper />);
   };
   
   const handleMenuClick = () => {
@@ -28,13 +32,13 @@ function App() {
       </header>
       <section>
         <div className="container">
-          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={handleClick} ></img>
+          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={statkiHandleClick} ></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
         </div>
         <div className="container">
-          {/*<img className="minizdj" src="src/assets/gra3.png" alt="gra3"></img>*/}
+          <img className="minizdj" src="src/assets/gra3.png" alt="gra3" onClick={saperHandleClick}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}

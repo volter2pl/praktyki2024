@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+
   const board = document.getElementById('board');
 
   init();
@@ -141,4 +141,3 @@ document.addEventListener('DOMContentLoaded', () => {
     timerClear();
     init();
   }
-});

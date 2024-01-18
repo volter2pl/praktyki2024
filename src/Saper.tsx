@@ -9,7 +9,7 @@ function Saper(){
             <p id="timer">Czas: 0</p>
             <div id="btnnnbtn"><button id="btnnn">Restart</button></div>
         </div>
-    )
+    );
 }
 
 export default Saper;
