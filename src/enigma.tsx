@@ -56,11 +56,16 @@ function Nig() {
             koniec += letter;
         }
     }
-    
-    
-
-    return koniec;
-    
+    return (
+        function () {
+            <>
+            <h3>{koniec}</h3>
+                <div>
+                    
+                </div>
+            </>
+        }
+    )
     
 }
 
