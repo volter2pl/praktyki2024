@@ -13,7 +13,6 @@ function Nig() {
         "Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you"
     ];
     const letters: string[][] = [
-        [' ', ' '],
         ['A', 'Α'],
         ['B', 'β'],
         ['C', 'Γ'],
@@ -56,28 +55,27 @@ function Nig() {
             koniec += letter;
         }
 }
-    function Contener() {
-        <>
-        
-            <h3>{koniec}</h3>
-    
-            <div className="Ang"></div>
-            <div className="Gre"></div>
-        </>
+        const buttons = letters.map((letter) => (
+            <button key={letter[0]} className="button">{letter[0]}</button>
+        ));
+        const buttons2 = letters.map((letter) => (
+            <button key={letter[1]} className="button">{letter[1]}</button>
+        ));
 
-        const A= document.querySelector(".Ang");
-        const G= document.querySelector(".Gre");
-        
-        for (let x = 0; x < letters.length; x++) {
+        return (
+            <>
+                <h3>{koniec}</h3>
+                
+                <div className="Ang">
+                {buttons}
+                </div>
+                
+                <div className="Gre">
+                {buttons2}
+                </div>
+            </>
+        );
 
-            const Btt = document.createElement("button");
-            Btt.setAttribute("className",'')
-            Btt.innerText = letters[x][0];
-            document.body.appendChild(Btt);
-
-        } 
-    }
-    return (Contener)
     
 }
 
