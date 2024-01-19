@@ -1,0 +1,26 @@
+@keyframes pulse-border-red {
+    0% {
+      border-color: #ffffff;
+    }
+    50% {
+      border-color: #ff000a;
+    }
+    100% {
+      border-color: #ffffff;
+    }
+  }
+.L_buttons{
+    color: #ff000a;
+    background-color: rgb(31, 31, 31);
+    border-radius: 8px;
+    border: 1px solid #ff2e36;
+    padding: 10px;
+    margin:2px;
+    transition: border-color 0.25s;
+    font-size: 20px;
+    box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
+  }
+  .L_buttons:hover{
+    border: 1px solid #ffffff;
+    transition: border-color 0.10s;
+  }
