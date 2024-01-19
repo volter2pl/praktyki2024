@@ -7,7 +7,6 @@ import { useState } from 'react';
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
-
   const handleClick = () => {
     setMessage(<Statki />);
     

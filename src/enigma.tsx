@@ -1,3 +1,4 @@
+import './enigma.css'
 
 function Nig() {
     const cytaty = [
@@ -56,27 +57,26 @@ function Nig() {
         }
 }
         const buttons = letters.map((letter) => (
-            <button key={letter[0]} className="button">{letter[0]}</button>
+            <button key={letter[0]} className="L_buttons">{letter[0]}</button>
         ));
         const buttons2 = letters.map((letter) => (
-            <button key={letter[1]} className="button">{letter[1]}</button>
+            <button key={letter[1]} className="L_buttons">{letter[1]}</button>
         ));
 
         return (
             <>
-                <h3>{koniec}</h3>
+                <div className="Enigma_D">
+                    <h1 className="Sifer">{koniec}</h1>
                 
-                <div className="Ang">
-                {buttons}
-                </div>
-                
-                <div className="Gre">
-                {buttons2}
-                </div>
+                    <div className="Ang">
+                    {buttons}
+                    </div>
+                    <div className="Gre">
+                    {buttons2}
+                    </div>
+                </div> 
             </>
         );
-
-    
 }
 
 export default Nig;
