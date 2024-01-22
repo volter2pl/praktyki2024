@@ -7,8 +7,12 @@ function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
 
-  const handleClick = () => {
-    setMessage(<Statki />);
+  const handleClick = (gameId : number) => {
+    hideSection();
+    if (gameId === 1){
+      
+      setMessage(<Statki />);
+    }
   };
   
   const handleMenuClick = () => {
@@ -21,6 +25,11 @@ function App() {
     setIsMenuOpen(isMenuOpen);  //Toggle menu state
   };
 
+  const hideSection = () => {
+    const section = document.querySelector("section") as HTMLElement;
+    section.style.display = "none";
+  }
+
   return (
     <>
       <header>
@@ -28,7 +37,7 @@ function App() {
       </header>
       <section>
         <div className="container">
-          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={handleClick} ></img>
+          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
