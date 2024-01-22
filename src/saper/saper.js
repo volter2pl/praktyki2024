@@ -1,5 +1,5 @@
-
   const board = document.getElementById('board');
+  let gameEnded = false;
 
   init();
 
@@ -14,17 +14,17 @@
     let mineLocations = [];
 
     board.innerHTML = '';
-  
+
     while (mineLocations.length < mines) {
       const row = Math.floor(Math.random() * rows);
       const col = Math.floor(Math.random() * cols);
       const position = `${row}-${col}`;
-      
+
       if (!mineLocations.includes(position)) {
         mineLocations.push(position);
       }
     }
-  
+
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
         const cell = document.createElement('div');
@@ -33,27 +33,29 @@
         cell.setAttribute('data-col', col);
         cell.addEventListener('click', revealCell);
         cell.addEventListener('contextmenu', toggleFlag);
-  
+
         board.appendChild(cell);
       }
     }
-  
+
     mineLocations.forEach(position => {
       const [row, col] = position.split('-');
       const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
       cell.classList.add('mine');
     });
-  
+
     function revealCell(event) {
+      if (gameEnded) return;
       const cell = event.target;
       const row = parseInt(cell.getAttribute('data-row'));
       const col = parseInt(cell.getAttribute('data-col'));
-  
+
       if (cell.classList.contains('hidden')) {
         if (cell.classList.contains('mine')) {
           revealMines();
           alert('Przegrałeś!');
           clearInterval(timerInt);
+          gameEnded = true;
         } else {
           const mineCount = countAdjacentMines(row, col);
           cell.textContent = mineCount > 0 ? mineCount : '';
@@ -64,19 +66,21 @@
           if (checkWin()) {
             alert('Wygrałeś!');
             clearInterval(timerInt);
+            gameEnded = true;
           }
         }
       }
     }
-  
+
     function toggleFlag(event) {
       event.preventDefault();
+      if (gameEnded) return;
       const cell = event.target;
       if (cell.classList.contains('hidden')) {
         cell.classList.toggle('flagged');
       }
     }
-  
+
     function countAdjacentMines(row, col) {
       let count = 0;
       for (let i = -1; i <= 1; i++) {
@@ -93,7 +97,7 @@
       }
       return count;
     }
-  
+
     function revealNeighbors(row, col) {
       for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
@@ -108,7 +112,7 @@
         }
       }
     }
-  
+
     function revealMines() {
       mineLocations.forEach(position => {
         const [row, col] = position.split('-');
@@ -116,28 +120,29 @@
         mineCell.classList.remove('hidden');
       });
     }
-  
+
     function checkWin() {
       const hiddenCells = document.querySelectorAll('.cell.hidden:not(.mine)');
       return hiddenCells.length === 0;
     }
   }
 
-  function startTimer(){
+  function startTimer() {
     Time = 1;
-    timerInt = setInterval(function(){
-    document.getElementById("timer").innerHTML = "Czas: " + Time;
+    timerInt = setInterval(function () {
+      document.getElementById("timer").innerHTML = "Czas: " + Time;
       Time++;
     }, 1000);
   }
 
-  function timerClear(){
+  function timerClear() {
     clearInterval(timerInt);
     document.getElementById("timer").innerHTML = "Czas: 0";
   }
 
-  function clearBoard(){
+  function clearBoard() {
     board.innerHTML = '';
     timerClear();
+    gameEnded = false;
     init();
   }
