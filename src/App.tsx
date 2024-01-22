@@ -7,8 +7,13 @@ function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
 
-  const handleClick = () => {
-    setMessage(<Statki />);
+  const handleClick = (gameId : number) => {
+    const section = document.querySelector("section") as HTMLElement;
+    section.style.display = "none";
+
+    if (gameId === 1){
+      setMessage(<Statki />);
+    }
   };
   
   const handleMenuClick = () => {
@@ -21,14 +26,18 @@ function App() {
     setIsMenuOpen(isMenuOpen);  //Toggle menu state
   };
 
+  const handleHeaderClick = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <header>
-        <h1 className='Logo'>Gamezz Loader</h1>
+        <h1 className='Logo' onClick={handleHeaderClick}>Gamezz Loader</h1>
       </header>
       <section>
         <div className="container">
-          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={handleClick} ></img>
+          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
@@ -45,7 +54,6 @@ function App() {
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-        
           <div className="menu">
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
