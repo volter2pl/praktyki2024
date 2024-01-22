@@ -8,7 +8,9 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
 
   const handleClick = (gameId : number) => {
-    hideSection();
+    const section = document.querySelector("section") as HTMLElement;
+    section.style.display = "none";
+    
     if (gameId === 1){
       
       setMessage(<Statki />);
@@ -24,11 +26,6 @@ function App() {
     }
     setIsMenuOpen(isMenuOpen);  //Toggle menu state
   };
-
-  const hideSection = () => {
-    const section = document.querySelector("section") as HTMLElement;
-    section.style.display = "none";
-  }
 
   return (
     <>
