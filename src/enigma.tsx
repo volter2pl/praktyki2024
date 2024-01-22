@@ -56,24 +56,37 @@ function Nig() {
             koniec += letter;
         }
 }
+        let i:number = 0;
         const buttons = letters.map((letter) => (
-            <button key={letter[0]} id='butt1' className="L_buttons">{letter[0]}</button>
+           
+            <button key={letter[0]} id={String(i++)} className="L_buttons">{letter[0]}</button>
         ));
+        let j:number = 0;
         const buttons2 = letters.map((letter) => (
-            <button key={letter[1]} id='butt2' className="L_buttons">{letter[1]}</button>
+            <button key={letter[1]} id={String(j++)} className="L_buttons">{letter[1]}</button>
         ));
+        
+        /*
+        const letter1 = document.querySelector('#butt1');
+        
+        function save1(){
+            const a:string = letter1.innerHTML;
+            console.log(a)
+        }
         function zapis1() {
             if (document.getElementById('butt1')?.onclick) {
-                let x = document.getElementById('butt1')?.innerHTML;
+                const x = document.getElementById('butt1')?.innerHTML;
                 console.log(x);
             }
-        }
+        }*/
+        
         return (
             <>
                 <div className="Enigma_D">
                     <h1 className="Sifer">{koniec}</h1>
                     <div className="Ang">
                     {buttons}
+                    
                     </div>
                   <div className="Gre">
                     {buttons2}
