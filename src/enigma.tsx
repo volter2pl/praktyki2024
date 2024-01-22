@@ -71,7 +71,7 @@ function Nig() {
                     <div className="Ang">
                     {buttons}
                     </div>
-                    <div className="Gre">
+                  <div className="Gre">
                     {buttons2}
                     </div>
                 </div> 
