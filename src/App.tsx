@@ -43,17 +43,17 @@ function App() {
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
         </div>
+        
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-       <Nig></Nig>
+        <Nig></Nig>
           <div className="menu">
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
       </main>
       <footer>
-        
         <button className='options' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
       </footer>
     </>

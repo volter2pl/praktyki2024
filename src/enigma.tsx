@@ -57,17 +57,21 @@ function Nig() {
         }
 }
         const buttons = letters.map((letter) => (
-            <button key={letter[0]} className="L_buttons">{letter[0]}</button>
+            <button key={letter[0]} id='butt1' className="L_buttons">{letter[0]}</button>
         ));
         const buttons2 = letters.map((letter) => (
-            <button key={letter[1]} className="L_buttons">{letter[1]}</button>
+            <button key={letter[1]} id='butt2' className="L_buttons">{letter[1]}</button>
         ));
-
+        function zapis1() {
+            if (document.getElementById('butt1')?.onclick) {
+                let x = document.getElementById('butt1')?.innerHTML;
+                console.log(x);
+            }
+        }
         return (
             <>
                 <div className="Enigma_D">
                     <h1 className="Sifer">{koniec}</h1>
-                
                     <div className="Ang">
                     {buttons}
                     </div>
