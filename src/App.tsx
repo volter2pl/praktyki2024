@@ -15,7 +15,7 @@ function App() {
     if (gameId === 1){
       setMessage(<Statki />);
     }
-
+    
     if (gameId === 2){
       setMessage(<Saper />);
     }
@@ -31,10 +31,14 @@ function App() {
     setIsMenuOpen(isMenuOpen);  //Toggle menu state
   };
 
+  const handleHeaderClick = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <header>
-        <h1 className='Logo'>Gamezz Loader</h1>
+        <h1 className='Logo' onClick={handleHeaderClick}>Gamezz Loader</h1>
       </header>
       <section>
         <div className="container">
@@ -55,7 +59,6 @@ function App() {
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-        
           <div className="menu">
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
