@@ -1,14 +1,11 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
+.cialo {
     background: black;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    margin: 0;
 }
-canvas {
+#game {
     border: 1px solid white;
 }
