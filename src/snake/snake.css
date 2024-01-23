@@ -3,8 +3,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    margin: 0;
 }
 #game {
     border: 1px solid white;
