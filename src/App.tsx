@@ -8,11 +8,17 @@ function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
 
-  const statkiHandleClick = () => {
-    setMessage(<Statki />);
-  };
-  const saperHandleClick = () => {
-    setMessage(<Saper />);
+  const handleClick = (gameId : number) => {
+    const section = document.querySelector("section") as HTMLElement;
+    section.style.display = "none";
+
+    if (gameId === 1){
+      setMessage(<Statki />);
+    }
+
+    if (gameId === 2){
+      setMessage(<Saper />);
+    }
   };
   
   const handleMenuClick = () => {
@@ -32,13 +38,13 @@ function App() {
       </header>
       <section>
         <div className="container">
-          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={statkiHandleClick} ></img>
+          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
         </div>
         <div className="container">
-          <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={saperHandleClick}></img>
+          <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={() => handleClick(2)}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}
