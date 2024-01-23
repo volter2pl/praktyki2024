@@ -16,7 +16,7 @@ function App() {
       setMessage(<Statki />);
     }
     
-    if (gameId === 2){
+    if (gameId === 3){
       setMessage(<Saper />);
     }
   };
@@ -48,7 +48,7 @@ function App() {
           {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
         </div>
         <div className="container">
-          <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={() => handleClick(2)}></img>
+          <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={() => handleClick(3)}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}
