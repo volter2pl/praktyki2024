@@ -1,7 +1,7 @@
 import './App.css'
 import Statki from './Statki.tsx'
 import changeTheme from './Theme.tsx';
-import Nig from './enigma.tsx';
+import Enig from './enigma.tsx';
 import { useState } from 'react';
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-        <Nig></Nig>
+        <Enig></Enig>
           <div className="menu">
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>

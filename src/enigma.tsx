@@ -1,6 +1,7 @@
 import './enigma.css'
 
-function Nig() {
+
+function Enig() {
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
         "It is the mark of an educated mind to be able to entertain a thought without accepting it",
@@ -56,15 +57,6 @@ function Nig() {
             koniec += letter;
         }
 }
-        /* let i:number = 0;
-        const buttons = letters.map((letter) => (
-           
-            <button key={letter[0]} id={String(i++)} className="L_buttons">{letter[0]}</button>
-        ));
-        let j:number = 0;
-        const buttons2 = letters.map((letter) => (
-            <button key={letter[1]} id={String(j++)} className="L_buttons">{letter[1]}</button>
-        ));*/
         const buttons = letters.map((letter) => (
             
             <button key={letter[0]} id='butt1' className="L_buttons">{letter[0]}</button>
@@ -74,18 +66,17 @@ function Nig() {
         ));
 
         
-        const letter1 = document.getElementById('#butt1');
+        const letter1 = document.getElementById('butt1');
     
         function zapis1() {
             if (letter1?.onclick) {
-                const x = letter1.innerHTML;
+                let x = letter1.innerHTML;
                 return console.log(x);
             }
             else{
                 return console.log(0);
             }
         }
-        
         return (
           
             <>
@@ -93,7 +84,7 @@ function Nig() {
                     <h1 className="Sifer">{koniec}</h1>
                     <div className="Ang">
                     {buttons}
-                    {zapis1}
+                    {zapis1()}
                     </div>
                   <div className="Gre">
                     {buttons2}
@@ -103,4 +94,4 @@ function Nig() {
         );
 }
 
-export default Nig;
+export default Enig;
