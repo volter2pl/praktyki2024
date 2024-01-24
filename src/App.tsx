@@ -66,7 +66,7 @@ function App() {
         
       </main>
       <footer>
-        <button className='options' onClick={handleMenuClick}>Opcje</button> {/* Add menu button */}
+        <img className='zebatka' src="src/assets/zebatka.png" alt="zębatka" onClick={handleMenuClick}></img>
       </footer>
     </>
   )
