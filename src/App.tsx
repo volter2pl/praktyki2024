@@ -1,6 +1,7 @@
 import './App.css'
 import Statki from './Statki.tsx';
 import Saper from './Saper.tsx';
+import Snake from './snake.tsx';
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
 
@@ -16,6 +17,10 @@ function App() {
       setMessage(<Statki />);
     }
     
+    if (gameId === 2){
+      setMessage(<Snake />);
+    }
+
     if (gameId === 3){
       setMessage(<Saper />);
     }
@@ -45,7 +50,7 @@ function App() {
           <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
-          {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
+          <img className="minizdj" src="src/assets/snake.png" alt="snake" onClick={() => handleClick(2)} ></img>
         </div>
         <div className="container">
           <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={() => handleClick(3)}></img>
