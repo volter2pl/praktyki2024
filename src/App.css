@@ -45,6 +45,7 @@ header {
   transition: border-color 0.25s;
   border-radius: 8px;
   margin-bottom: 10px;
+  user-select: none;
 }
 section{
   margin-top: 20px;
