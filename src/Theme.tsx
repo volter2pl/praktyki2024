@@ -5,7 +5,7 @@ function changeTheme(){
     const sectionElements = document.querySelectorAll(".container") as NodeListOf<HTMLElement>;
     const logoElement = document.querySelector(".Logo") as HTMLElement;
     const buttonElement = document.querySelector(".changecolour") as HTMLElement;
-    const buttonElementSec = document.querySelector(".options") as HTMLElement;
+    const buttonElementSec = document.querySelector(".zebatka") as HTMLElement;
     const menu = document.querySelector(".menu") as HTMLElement;
 
     if (mainElement && headerElement && footerElement && sectionElements && logoElement && buttonElement) {
@@ -32,7 +32,6 @@ function changeTheme(){
 
       buttonElementSec.style.color = isViolet ? "" : "violet";
       buttonElementSec.style.borderColor = isViolet ? "" : "violet";
-      buttonElementSec.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
       buttonElementSec.addEventListener("mouseover", () => { buttonElement.style.borderColor = "white" });
       buttonElementSec.addEventListener("mouseout", () => { isViolet ? buttonElement.style.borderColor = "#ff2e36" : buttonElement.style.borderColor = "violet"});
 

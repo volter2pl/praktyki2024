@@ -108,7 +108,7 @@ footer{
   margin: 10px;
   transition: border-color 0.25s;
 }
-.changecolour,.options{
+.changecolour{
   color: #ff000a;
   background-color: rgb(31, 31, 31);
   border-radius: 8px;
