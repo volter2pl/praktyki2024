@@ -30,7 +30,7 @@ function loop() {
   requestAnimationFrame(loop);
 
   //Game speed
-  if (++count < 4) {
+  if (++count < 10) {
   return;
   }
 
