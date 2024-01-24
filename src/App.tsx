@@ -52,8 +52,7 @@ function App() {
           <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
-          <img className="minizdj" src="src/assets/snake.png" alt="snake" onClick={handleClick(2)} ></img>
-          {/*<img className="minizdj" src="src/assets/gra2.png" alt="gra2"></img>*/}
+          <img className="minizdj" src="src/assets/snake.png" alt="snake" onClick={() => handleClick(2)} ></img>
         </div>
         <div className="container">
           <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={() => handleClick(3)}></img>
