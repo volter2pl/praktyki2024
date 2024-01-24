@@ -1,6 +1,5 @@
 import './enigma.css'
 
-
 function Enig() {
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
@@ -45,7 +44,7 @@ function Enig() {
     function losujLiczbeOd1Do10(): number {
         return Math.floor(Math.random() * 10);
     }
-    let wylosowane : string= cytaty[losujLiczbeOd1Do10()];
+    let wylosowane: string = cytaty[losujLiczbeOd1Do10()];
     wylosowane = wylosowane.toUpperCase();
     let koniec: string = "";
     for (let i = 0; i < wylosowane.length; i++) {
@@ -56,42 +55,36 @@ function Enig() {
         } else {
             koniec += letter;
         }
-}
-        const buttons = letters.map((letter) => (
-            
-            <button key={letter[0]} id='butt1' className="L_buttons">{letter[0]}</button>
-        ));
-        const buttons2 = letters.map((letter) => (
-            <button key={letter[1]} id='butt2' className="L_buttons">{letter[1]}</button>
-        ));
+    }
 
-        
-        const letter1 = document.getElementById('butt1');
-    
-        function zapis1() {
-            if (letter1?.onclick) {
-                let x = letter1.innerHTML;
-                return console.log(x);
-            }
-            else{
-                return console.log(0);
-            }
-        }
-        return (
-          
-            <>
-                <div className="Enigma_D">
-                    <h1 className="Sifer">{koniec}</h1>
-                    <div className="Ang">
+    const handleClick = (letter: string) => {
+        console.log(letter);
+    };
+
+    const buttons = letters.map((letter) => (
+        <div key={letter[0]} id='butt1' className="L_buttons" onClick={() => handleClick(letter[0])}>
+            {letter[0]}
+        </div>
+    ));
+    const buttons2 = letters.map((letter) => (
+        <div key={letter[1]} id='butt2' className="L_buttons" onClick={() => handleClick(letter[1])}>
+            {letter[1]}
+        </div>
+    ));
+
+    return (
+        <>
+            <div className="Enigma_D">
+                <h1 className="Sifer">{koniec}</h1>
+                <div className="Ang">
                     {buttons}
-                    {zapis1()}
-                    </div>
-                  <div className="Gre">
+                </div>
+                <div className="Gre">
                     {buttons2}
-                    </div>
-                </div> 
-            </>
-        );
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default Enig;

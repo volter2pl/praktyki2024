@@ -28,11 +28,20 @@
   .Ang{
     margin-bottom:5px;
     margin-top:20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Gre{
+    display: flex;
+    flex-wrap: wrap;
   }
   .Sifer{
     font-family:'Trebuchet MS';
     margin-left:10px;
     margin-right:10px;
+  }
+  #butt1,#butt2{
+    width: auto;
   }
 
  
