@@ -5,6 +5,7 @@ import Snake from './snake.tsx';
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
 
+
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
