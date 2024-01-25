@@ -47,13 +47,13 @@ function App() {
       </header>
       <section>
         <div className="container">
-          <img className="minizdj" src="src/assets/statek.png" alt="statek" onClick={() => handleClick(1)} ></img>
+          <img className="minizdj" src="https://i.ibb.co/R61mkWc/statek.jpg" alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
-          <img className="minizdj" src="src/assets/snake.png" alt="snake" onClick={() => handleClick(2)} ></img>
+          <img className="minizdj" src="https://i.ibb.co/Jv4NJgN/waz.jpg" alt="snake" onClick={() => handleClick(2)} ></img>
         </div>
         <div className="container">
-          <img className="minizdj" src="src/assets/bomba.png" alt="bomba" onClick={() => handleClick(3)}></img>
+          <img className="minizdj" src="https://i.ibb.co/qnDKvd5/bomba.png" alt="bomba" onClick={() => handleClick(3)}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}
@@ -71,7 +71,7 @@ function App() {
         
       </main>
       <footer>
-        <img className='zebatka' src="src/assets/zebatka.png" alt="zębatka" onClick={handleMenuClick}></img>
+        <img className='zebatka' src="https://i.ibb.co/Dgy9jC2/zebatka.png" alt="zębatka" onClick={handleMenuClick}></img>
       </footer>
     </>
   )
