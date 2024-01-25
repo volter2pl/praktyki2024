@@ -227,21 +227,3 @@ clickableboxes.forEach(cbox => {
         cbox.classList.remove('clickable')
     })
 })
-
-
-
-
-
-
-
-
-
-//reload button
-
-let page = document.getElementById('rp')
-let button = document.createElement('button')
-button.textContent = 'Reload'
-button.addEventListener('click',() => {
-    location.reload()
-})
-page.append(button)
