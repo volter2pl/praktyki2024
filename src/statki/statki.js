@@ -35,8 +35,8 @@ function createBoard(color, user) {
 
     gamesboardContainer.append(gameboardContainer)
 }
-createBoard('rgb(255,255,0)', 'player')
-createBoard('rgb(255,0,255)', 'computer')
+createBoard('#736679', 'player')
+createBoard('#301934', 'computer')
 
 //Creating Ships
 class Ship
