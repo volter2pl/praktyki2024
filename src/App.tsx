@@ -66,6 +66,7 @@ function App() {
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
           <div className="menu">
+            <img className="closeMenu" src="src/assets/close.png" alt="close" onClick={handleMenuClick}/>
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
