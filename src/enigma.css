@@ -9,6 +9,7 @@
     font-size: 20px;
     box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
     width:40px;
+    user-select: none;
     
    
   }
@@ -30,10 +31,14 @@
     margin-top:20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .Gre{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
   .Sifer{
     font-family:'Trebuchet MS';
@@ -41,7 +46,7 @@
     margin-right:10px;
   }
   #butt1,#butt2{
-    width: auto;
+    width: 15px;
   }
 
  
