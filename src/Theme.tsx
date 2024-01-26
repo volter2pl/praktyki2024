@@ -1,13 +1,15 @@
 function changeTheme(){
-    const mainElement = document.querySelector("main") as HTMLElement;
-    const headerElement = document.querySelector("header") as HTMLElement;
-    const footerElement = document.querySelector("footer") as HTMLElement;
-    const sectionElements = document.querySelectorAll(".container") as NodeListOf<HTMLElement>;
-    const logoElement = document.querySelector(".Logo") as HTMLElement;
-    const buttonElement = document.querySelector(".changecolour") as HTMLElement;
-    const buttonElementSec = document.querySelector(".zebatka") as HTMLElement;
-    const menu = document.querySelector(".menu") as HTMLElement;
-
+  const mainElement = document.querySelector("main") as HTMLElement;
+  const headerElement = document.querySelector("header") as HTMLElement;
+  const footerElement = document.querySelector("footer") as HTMLElement;
+  const sectionElements = document.querySelectorAll(".container") as NodeListOf<HTMLElement>;
+  const logoElement = document.querySelector(".Logo") as HTMLElement;
+  const buttonElement = document.querySelector(".changecolour") as HTMLElement;
+  const buttonElementSec = document.querySelector(".zebatka") as HTMLElement;
+  const menu = document.querySelector(".menu") as HTMLElement;
+  const sapper = document.querySelectorAll(".cell") as NodeListOf<HTMLElement>;
+    
+    
     if (mainElement && headerElement && footerElement && sectionElements && logoElement && buttonElement) {
       const isViolet = mainElement.style.borderColor === "violet";
 
@@ -38,6 +40,10 @@ function changeTheme(){
       menu.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
       menu.style.borderColor = isViolet ? "" : "violet";
 
+      sapper.forEach((element) => {
+        element.style.borderColor = isViolet ? "" : "violet";
+      });
+      
       sectionElements.forEach((element) => {
         element.style.borderColor = isViolet ? "" : "violet";
         element.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
