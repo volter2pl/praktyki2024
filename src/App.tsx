@@ -4,7 +4,9 @@ import Saper from './Saper.tsx';
 import Snake from './snake.tsx';
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
-
+import statek from './assets/statek.jpg';
+import waz from './assets/waz.jpg';
+import bomba from './assets/bomba.jpg';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
@@ -48,13 +50,13 @@ function App() {
       </header>
       <section>
         <div className="container">
-          <img className="minizdj" src="https://i.ibb.co/R61mkWc/statek.jpg" alt="statek" onClick={() => handleClick(1)} ></img>
+          <img className="minizdj" src={statek} alt="statek" onClick={() => handleClick(1)} ></img>
         </div>
         <div className="container">
-          <img className="minizdj" src="https://i.ibb.co/Jv4NJgN/waz.jpg" alt="snake" onClick={() => handleClick(2)} ></img>
+          <img className="minizdj" src={waz} alt="snake" onClick={() => handleClick(2)} ></img>
         </div>
         <div className="container">
-          <img className="minizdj" src="https://i.ibb.co/qnDKvd5/bomba.png" alt="bomba" onClick={() => handleClick(3)}></img>
+          <img className="minizdj" src={bomba} alt="bomba" onClick={() => handleClick(3)}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}
