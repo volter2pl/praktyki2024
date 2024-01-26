@@ -8,6 +8,7 @@ import { useState } from 'react';
 import statek from './assets/statek.jpg';
 import waz from './assets/waz.jpg';
 import bomba from './assets/bomba.jpg';
+import tik from './assets/tik.png';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
@@ -63,7 +64,7 @@ function App() {
           <img className="minizdj" src={bomba} alt="bomba" onClick={() => handleClick(3)}></img>
         </div>
         <div className="container">
-          <img className="minizdj" src="" alt="koło" onClick={() => handleClick(4)}></img>
+          <img className="minizdj" src={tik} alt="koło" onClick={() => handleClick(4)}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
