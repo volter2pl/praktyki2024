@@ -2,6 +2,7 @@ import './App.css'
 import Statki from './Statki.tsx';
 import Saper from './Saper.tsx';
 import Snake from './snake.tsx';
+import Tic_Tac_Toe from './Tic_Tac_Toe.tsx';
 import changeTheme from './Theme.tsx';
 import { useState } from 'react';
 import statek from './assets/statek.jpg';
@@ -26,6 +27,9 @@ function App() {
 
     if (gameId === 3){
       setMessage(<Saper />);
+    }
+    if (gameId === 4){
+      setMessage(<Tic_Tac_Toe />);
     }
   };
   
@@ -59,7 +63,7 @@ function App() {
           <img className="minizdj" src={bomba} alt="bomba" onClick={() => handleClick(3)}></img>
         </div>
         <div className="container">
-          {/*<img className="minizdj" src="src/assets/gra4.png" alt="gra4"></img>*/}
+          <img className="minizdj" src="" alt="koło" onClick={() => handleClick(4)}></img>
         </div>
         <div className="container">
           {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
