@@ -1,0 +1,161 @@
+.box {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(43, 228, 218);
+    padding: 20px;
+    margin: 2px;
+}
+
+.board {
+    display: grid;
+    width: 100%;
+    place-content: center;
+    grid-template-columns: 124px 124px 124px;
+    grid-template-rows: 124px 124px 124px;
+}
+
+.clickable:hover {
+    background-color: rgb(33, 113, 233);
+    cursor: pointer;
+} 
+
+.clicked {
+    width: 40px;
+    height: 40px;
+    background-color: blue; 
+    padding: 10px;
+} 
+
+.player1 {
+    background-color: rgb(228, 36, 68);
+}
+
+.player2 {
+    background-color: rgb(32, 211, 100);
+}  
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20rch;
+}
+
+#rp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes heehee {
+    from {
+		transform: translateY(-100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0px);
+		opacity: 1;	
+	}
+}
+
+@keyframes heeheeb {
+    from {
+		transform: translateY(-128px);
+	}
+	to {
+		transform: translateY(0px);
+	}
+}
+
+.animate {
+    animation: heehee .3s linear;
+}
+
+.animateb {
+    animation: heeheeb .3s linear;
+}
+
+h3 {
+    width: 100%;
+    color: rgb(43, 228, 218);
+    font-size: 40px;
+    font-family: 'Mooli', sans-serif;
+    text-align: center;
+}
+
+
+span.p1span1,span.p1span2 {
+    position: absolute;
+    margin-top: 35px;
+}
+
+.p1span1 {
+    display: block;
+    width: 80px;
+    height: 10px;
+    border-radius: 1999px;
+    rotate: 45deg;
+    background-color: black;
+}
+
+.p1span2 {
+    display: block;
+    width: 80px;
+    height: 10px;
+    border-radius: 1999px;
+    rotate: -45deg;
+    background-color: black;
+}
+
+.tongue {
+    width: 100%;
+    height: 100%;
+}
+
+span.p2span1,span.p2span2 {
+    position: absolute;
+}
+
+.p2span1 {
+    display: block;
+    padding: 40px;
+    background-color: black;
+    border-radius: 1999px;
+}
+
+.p2span2 {
+    display: block;
+    padding: 30px;
+    background-color: rgb(32, 211, 100);
+    border-radius: 1999px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+button {
+    transition: .2s;
+    background-color: rgb(43, 228, 218);
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    width: 120px;
+    font-family: 'Mooli', sans-serif;
+    font-size: larger;
+}
+
+button:hover {
+    box-shadow: 0px 0px 20px rgb(33, 113, 233);
+    transition: .2s;
+    cursor: pointer;
+}
+
+h4 {
+    width: 100%;
+    color: rgb(43, 228, 218);
+    font-size: 20px;
+    font-family: 'Mooli', sans-serif;
+    text-align: center;
+}
