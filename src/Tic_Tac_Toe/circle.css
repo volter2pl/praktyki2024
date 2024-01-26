@@ -130,7 +130,7 @@ span.p2span1,span.p2span2 {
 }
 
 
-button {
+.restart-button {
     transition: .2s;
     background-color: rgb(43, 228, 218);
     border: none;
@@ -142,7 +142,7 @@ button {
     font-size: larger;
 }
 
-button:hover {
+.restart-button:hover {
     box-shadow: 0px 0px 20px rgb(33, 113, 233);
     transition: .2s;
     cursor: pointer;

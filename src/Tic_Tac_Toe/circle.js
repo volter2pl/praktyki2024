@@ -171,10 +171,30 @@ clickableboxes.forEach(cbox => {
         cbox.classList.remove('clickable')
     })
 })
-let page = document.getElementById('rp')
-let button = document.createElement('button')
-button.textContent = 'Reload'
-button.addEventListener('click',() => {
-    location.reload()
-})
-page.append(button)
+function resetGame() {
+    player1moves = [];
+    player2moves = [];
+    player = 1;
+
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+        box.classList.remove('player1', 'player2', 'clickable');
+        box.value = 'true';
+        box.innerHTML = ''; // Remove any content within the box, such as spans
+    });
+
+    const winner = document.querySelector('.animate');
+    if (winner) {
+        winner.remove(); // Remove the winner message if it exists
+    }
+
+    playerturn.textContent = 'Player1 move';
+}
+    let page = document.getElementById('home')
+    let button = document.createElement('button')
+    button.textContent = 'Restart'
+    button.classList.add('restart-button')
+    button.addEventListener('click', () => {
+        resetGame();
+    });
+    page.append(button);
