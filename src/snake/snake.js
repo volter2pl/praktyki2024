@@ -1,6 +1,6 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
-
+var points = 0;
 var grid = 16;
 var count = 0;
   
@@ -62,19 +62,21 @@ function loop() {
     snake.cells.pop();
   }
 
+   // Point counter
+
   //Apple and snake interaction
   context.fillStyle = 'red';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
   context.fillStyle = 'green';
   snake.cells.forEach(function(cell, index) {
-    
-
     context.fillRect(cell.x, cell.y, grid-1, grid-1);  
 
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
 
+      points++;
+      document.getElementById("points").innerHTML = "Punkty " + points;
       apple.x = getRandomInt(0, 25) * grid;
       apple.y = getRandomInt(0, 25) * grid;
     }
@@ -92,10 +94,12 @@ function loop() {
 
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
+
+        points = 0; // Reset points
+        document.getElementById("points").innerHTML = "Punkty " + points;
       }
     }
   });
-}
   
   // Movement
 
@@ -120,5 +124,5 @@ document.addEventListener('keydown', function(e) {
     snake.dx = 0;
   }
 });
-
+}
 requestAnimationFrame(loop);
