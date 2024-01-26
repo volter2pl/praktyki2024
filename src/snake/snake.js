@@ -37,7 +37,6 @@ function loop() {
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
 
-  //Snake
   snake.x += snake.dx;
   snake.y += snake.dy;
 
@@ -62,9 +61,6 @@ function loop() {
     snake.cells.pop();
   }
 
-   // Point counter
-
-  //Apple and snake interaction
   context.fillStyle = 'red';
   context.fillRect(apple.x, apple.y, grid-1, grid-1);
 
@@ -83,7 +79,6 @@ function loop() {
 
     for (var i = index + 1; i < snake.cells.length; i++) {
       
-      //Game Over
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
         snake.x = 160;
         snake.y = 160;
@@ -95,13 +90,12 @@ function loop() {
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
 
-        points = 0; // Reset points
+        points = 0;
         document.getElementById("points").innerHTML = "Punkty " + points;
       }
     }
   });
-  
-  // Movement
+
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'a' && snake.dx === 0) {
