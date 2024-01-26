@@ -7,12 +7,6 @@ let playerturn = document.createElement('h4')
 playerturn.textContent = 'Player1 move'
 home.append(playerturn)
 
-
-
-
-
-//glowna petla tworzaca boxy
-
 for (let i=1;i<10;i++) {
     let box = document.createElement('div')
     box.classList.add('box')
@@ -21,37 +15,10 @@ for (let i=1;i<10;i++) {
     board.append(box)
 }
 
-
-
-
-
-
-//dodawanie do glownego diva
-
 home.append(board)
-
-
-
-
-
-
-
-
-//tablice graczy
 
 let player1moves = []
 let player2moves = []
-
-
-
-
-
-
-
-
-
-
-//check winner i kombinacje
 
 function updateboxes(playermoves) {
     if (playermoves==player1moves) {
@@ -141,15 +108,6 @@ function checkwinner(playermoves){
     
 }
 
-
-
-
-
-
-
-
-//draw x or o
-
 function draw(nspan1,nspan2,id) {
     const thixBox = document.getElementById(parseInt(id))
     let spanBox = document.createElement('div')
@@ -163,19 +121,6 @@ function draw(nspan1,nspan2,id) {
     thixBox.append(spanBox)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//dodawanie do boxow onclick
 
 const boxes = document.querySelectorAll('.box')
 boxes.forEach(box => {
