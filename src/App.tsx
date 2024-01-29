@@ -1,7 +1,7 @@
 import './App.css'
 import Statki from './Statki.tsx';
 import Saper from './Saper.tsx';
-import Snake from './snake.tsx';
+import Snake from './snake/snake.tsx';
 import Tic_Tac_Toe from './Tic_Tac_Toe.tsx';
 import changeTheme from './Theme.tsx';
 import Enig from './enigma.tsx';
