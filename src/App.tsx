@@ -1,4 +1,5 @@
 import './App.css'
+import { Helmet } from 'react-helmet';
 import Statki from './Statki.tsx';
 import Saper from './Saper.tsx';
 import Snake from './snake/snake.tsx';
@@ -11,6 +12,7 @@ import waz from './assets/waz.jpg';
 import bomba from './assets/bomba.jpg';
 import tik from './assets/tik.png';
 import enigma from './assets/enigma.jpg';
+
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
@@ -58,6 +60,11 @@ function App() {
   return (
     <>
       <header>
+      <Helmet>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet"></link>
+      </Helmet>
         <h1 className='Logo' onClick={handleHeaderClick}>Gamezz Loader</h1>
       </header>
       <section>
