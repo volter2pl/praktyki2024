@@ -12,6 +12,7 @@ import bomba from './assets/bomba.jpg';
 import tik from './assets/tik.png';
 import enigma from './assets/enigma.jpg';
 
+
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
@@ -58,6 +59,10 @@ function App() {
   return (
     <>
       <header>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&display=swap" rel="stylesheet"></link>
+
         <h1 className='Logo' onClick={handleHeaderClick}>Gamezz Loader</h1>
       </header>
       <section>
