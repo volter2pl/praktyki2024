@@ -25,6 +25,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Install React_Cookies
+        run: npm install react-cookie
+      
+      - name: Install helmet
+        run: npm install react-helmet
+        
       - name: Build Project
         run: npm run build
 

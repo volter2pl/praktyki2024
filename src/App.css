@@ -44,6 +44,8 @@ header {
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
   transition: border-color 0.25s;
   border-radius: 8px;
+  margin-bottom: 10px;
+  user-select: none;
 }
 section{
   margin-top: 20px;
@@ -79,6 +81,7 @@ main{
   box-shadow: inset 0px 0px 10px 5px rgba(255,0,10,0.5), 0px 2px 50px 10px rgba(255,0,10,0.5);
   transition: border-color 0.25s;
   border-radius: 8px;
+  margin-top: 10px;
 }
 footer{
   margin-top: 20px;
@@ -105,7 +108,7 @@ footer{
   margin: 10px;
   transition: border-color 0.25s;
 }
-.changecolour,.options{
+.changecolour{
   color: #ff000a;
   background-color: rgb(31, 31, 31);
   border-radius: 8px;
@@ -129,10 +132,21 @@ footer{
   border-radius: 8px;
   box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
 }
-.L_buttons{
-  color: #ff000a;
-  background-color: rgb(31, 31, 31);
-  border-radius: 8px;
-  border: 1px solid #ff2e36;
-  box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
+.closeMenu{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+.zebatka{
+  width: 90px;
+  height: 90px;
+  transition: transform 2s;
+}
+
+.zebatka:hover {
+  transform: rotate(360deg);
 }
