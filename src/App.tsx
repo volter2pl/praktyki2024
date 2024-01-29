@@ -4,15 +4,19 @@ import Saper from './Saper.tsx';
 import Snake from './snake.tsx';
 import Tic_Tac_Toe from './Tic_Tac_Toe.tsx';
 import changeTheme from './Theme.tsx';
+import Enig from './enigma.tsx';
 import { useState } from 'react';
 import statek from './assets/statek.jpg';
 import waz from './assets/waz.jpg';
 import bomba from './assets/bomba.jpg';
 import tik from './assets/tik.png';
+import enigma from './assets/enigma.jpg';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
+
+
 
   const handleClick = (gameId : number) => {
     const section = document.querySelector("section") as HTMLElement;
@@ -31,6 +35,9 @@ function App() {
     }
     if (gameId === 4){
       setMessage(<Tic_Tac_Toe />);
+    }
+    if (gameId === 5){
+      setMessage(<Enig />);
     }
   };
   
@@ -67,17 +74,18 @@ function App() {
           <img className="minizdj" src={tik} alt="koło" onClick={() => handleClick(4)}></img>
         </div>
         <div className="container">
-          {/*<img className="minizdj" src="src/assets/gra5.png" alt="gra5"></img>*/}
+        <img className="minizdj" src={enigma} alt="koło" onClick={() => handleClick(5)}></img>
         </div>
+        
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
+       
           <div className="menu">
             <img className="closeMenu" src="https://i.ibb.co/FnsQ9wN/close.png" alt="close" onClick={handleMenuClick}/>
             <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
           </div>
-        
       </main>
       <footer>
         <img className='zebatka' src="https://i.ibb.co/Dgy9jC2/zebatka.png" alt="zębatka" onClick={handleMenuClick}></img>
