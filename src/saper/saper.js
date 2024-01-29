@@ -143,6 +143,7 @@
     function clearBoard() {
       const cells = document.querySelectorAll('.cell');
       cells.forEach(cell => {
+        cell.classList.remove('flagged');
         cell.classList.add('hidden');
         cell.textContent = '';
       });
