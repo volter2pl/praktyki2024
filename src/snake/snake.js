@@ -26,9 +26,6 @@ function getRandomInt(min, max) {
 }
 
 // game loop
-// Load snake and apple images
-var snakeImage = new Image();
-snakeImage.src = 'snake_image.png';
 
 var appleImage = new Image();
 appleImage.src = 'src/assets/apple.png';
@@ -78,7 +75,7 @@ function loop() {
       snake.maxCells++;
 
       points++;
-      document.getElementById("points").innerHTML = "Punkty " + points;
+      document.getElementById("points").innerHTML = "Punkty: " + points;
       apple.x = getRandomInt(0, 25) * grid;
       apple.y = getRandomInt(0, 25) * grid;
     }
@@ -103,25 +100,187 @@ function loop() {
   });
 
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'a' && snake.dx === 0) {
+  if (e.key === 'a' || e.which === 37 && snake.dx === 0) {
     snake.dx = -grid;
     snake.dy = 0;
   }
 
-  else if (e.key === 'w' && snake.dy === 0) {
+  else if (e.key === 'w' || e.which === 38 && snake.dy === 0) {
     snake.dy = -grid;
     snake.dx = 0;
   }
 
-  else if (e.key === 'd' && snake.dx === 0) {
+  else if (e.key === 'd' || e.which === 39 && snake.dx === 0) {
     snake.dx = grid;
     snake.dy = 0;
   }
 
-  else if (e.key === 's' && snake.dy === 0) {
+  else if (e.key === 's' || e.which === 40 && snake.dy === 0) {
     snake.dy = grid;
     snake.dx = 0;
   }
 });
 }
 requestAnimationFrame(loop);
+
+
+
+
+// function loop() {
+//   requestAnimationFrame(loop);
+
+//   // Game speed
+//   if (++count < 6) {
+//     return;
+//   }
+
+//   count = 0;
+//   context.clearRect(0, 0, canvas.width, canvas.height);
+
+//   snake.x += snake.dx;
+//   snake.y += snake.dy;
+
+//   if (snake.x < 0) {
+//     snake.x = canvas.width - grid;
+//   } else if (snake.x >= canvas.width) {
+//     snake.x = 0;
+//   }
+
+//   if (snake.y < 0) {
+//     snake.y = canvas.height - grid;
+//   } else if (snake.y >= canvas.height) {
+//     snake.y = 0;
+//   }
+
+//   snake.cells.unshift({ x: snake.x, y: snake.y });
+
+//   if (snake.cells.length > snake.maxCells) {
+//     snake.cells.pop();
+//   }
+
+//   // Draw apple image
+//   context.drawImage(appleImage, apple.x, apple.y, grid - 1, grid - 1);
+
+//   snake.cells.forEach(function (cell, index) {
+//     context.save(); // Save the current canvas state
+
+//     if (index === 0) {
+//       // Draw and rotate snake head image
+//       context.translate(cell.x + grid / 2, cell.y + grid / 2);
+//       context.rotate(Math.atan2(snake.dy, snake.dx));
+//       context.drawImage(headImage, -grid / 2, -grid / 2, grid, grid);
+//     } else if (index === snake.cells.length - 1) {
+//       // Draw and rotate snake tail image
+//       context.translate(cell.x + grid / 2, cell.y + grid / 2);
+//       context.rotate(Math.atan2(snake.cells[index - 1].y - cell.y, snake.cells[index - 1].x - cell.x));
+//       context.drawImage(tailImage, -grid / 2, -grid / 2, grid, grid);
+//     } else {
+//       // Draw snake body image without rotation
+//       context.drawImage(bodyImage, cell.x, cell.y, grid - 1, grid - 1);
+//     }
+
+//     context.restore(); // Restore the saved canvas state
+//   });
+
+
+
+
+// var headImage = new Image();
+// headImage.src = 'src/assets/snake_head.png'; // Path to the snake head image
+
+// var bodyImage = new Image();
+// bodyImage.src = 'src/assets/snake_body.png'; // Path to the snake body image
+
+// var tailImage = new Image();
+// tailImage.src = 'src/assets/snake_tail.png'; // Path to the snake tail image
+
+// var rotation = 0; // Initial rotation angle
+
+// function loop() {
+//   requestAnimationFrame(loop);
+
+//   // Game speed
+//   if (++count < 6) {
+//     return;
+//   }
+
+//   count = 0;
+//   context.clearRect(0,0,canvas.width,canvas.height);
+
+//   snake.x += snake.dx;
+//   snake.y += snake.dy;
+
+//   if (snake.x < 0) {
+//     snake.x = canvas.width - grid;
+//   }
+//   else if (snake.x >= canvas.width) {
+//     snake.x = 0;
+//   }
+
+//   if (snake.y < 0) {
+//     snake.y = canvas.height - grid;
+//   }
+//   else if (snake.y >= canvas.height) {
+//     snake.y = 0;
+//   }
+
+//   snake.cells.unshift({x: snake.x, y: snake.y});
+
+//   if (snake.cells.length > snake.maxCells) {
+//     snake.cells.pop();
+//   }
+
+//   // Draw apple image
+//   context.drawImage(appleImage, apple.x, apple.y, grid - 1, grid - 1);
+
+//   snake.cells.forEach(function(cell, index) {
+//     context.save(); // Save the current transformation state
+
+//     if (index === 0) {
+//       // Draw and rotate snake head image
+//       context.translate(cell.x + grid / 2, cell.y + grid / 2);
+//       context.rotate(rotation);
+//       context.drawImage(headImage, -grid / 2, -grid / 2, grid - 1, grid - 1);
+//     } else if (index === snake.cells.length - 1) {
+//       // Draw and rotate snake tail image
+//       context.translate(cell.x + grid / 2, cell.y + grid / 2);
+//       context.rotate(rotation);
+//       context.drawImage(tailImage, -grid / 2, -grid / 2, grid - 1, grid - 1);
+//     } else {
+//       // Draw and rotate snake body image
+//       context.translate(cell.x + grid / 2, cell.y + grid / 2);
+//       context.rotate(rotation);
+//       context.drawImage(bodyImage, -grid / 2, -grid / 2, grid - 1, grid - 1);
+//     }
+
+//     context.restore(); // Restore the saved transformation state
+
+//     if (cell.x === apple.x && cell.y === apple.y) {
+//       snake.maxCells++;
+
+//       points++;
+//       document.getElementById("points").innerHTML = "Punkty: " + points;
+//       apple.x = getRandomInt(0, 25) * grid;
+//       apple.y = getRandomInt(0, 25) * grid;
+//     }
+
+//     for (var i = index + 1; i < snake.cells.length; i++) {
+//       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+//         snake.x = 160;
+//         snake.y = 160;
+//         snake.cells = [];
+//         snake.maxCells = 4;
+//         snake.dx = grid;
+//         snake.dy = 0;
+
+//         apple.x = getRandomInt(0, 25) * grid;
+//         apple.y = getRandomInt(0, 25) * grid;
+
+//         points = 0;
+//         document.getElementById("points").innerHTML = "Punkty " + points;
+//       }
+//     }
+//   });
+
+//   rotation += 0.05; // Increment the rotation angle
+
