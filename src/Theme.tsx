@@ -8,8 +8,8 @@ function changeTheme(){
   const buttonElementSec = document.querySelector(".zebatka") as HTMLElement;
   const menu = document.querySelector(".menu") as HTMLElement;
   const sapper = document.querySelectorAll(".cell") as NodeListOf<HTMLElement>;
+  const snake = document.getElementById('game') as HTMLElement;
   
-    
     
     if (mainElement && headerElement && footerElement && sectionElements && logoElement && buttonElement && buttonElementSec && menu && sapper) {
       const isViolet = mainElement.style.borderColor === "violet";
@@ -45,6 +45,7 @@ function changeTheme(){
         element.style.borderColor = isViolet ? "" : "violet";
       });
       
+      snake.style.borderColor = isViolet ? "" : "violet";
       
       sectionElements.forEach((element) => {
         element.style.borderColor = isViolet ? "" : "violet";
