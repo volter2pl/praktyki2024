@@ -26,12 +26,19 @@ function getRandomInt(min, max) {
 }
 
 // game loop
+// Load snake and apple images
+var snakeImage = new Image();
+snakeImage.src = 'snake_image.png';
+
+var appleImage = new Image();
+appleImage.src = 'src/assets/apple.png';
+
 function loop() {
   requestAnimationFrame(loop);
 
-  //Game speed
+  // Game speed
   if (++count < 6) {
-  return;
+    return;
   }
 
   count = 0;
@@ -46,7 +53,6 @@ function loop() {
   else if (snake.x >= canvas.width) {
     snake.x = 0;
   }
-  
 
   if (snake.y < 0) {
     snake.y = canvas.height - grid;
@@ -61,8 +67,8 @@ function loop() {
     snake.cells.pop();
   }
 
-  context.fillStyle = 'red';
-  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+  // Draw apple image
+  context.drawImage(appleImage, apple.x, apple.y, grid - 1, grid - 1);
 
   context.fillStyle = 'green';
   snake.cells.forEach(function(cell, index) {
@@ -95,7 +101,6 @@ function loop() {
       }
     }
   });
-
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'a' && snake.dx === 0) {
