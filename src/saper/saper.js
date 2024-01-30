@@ -84,11 +84,13 @@
           if (cell.classList.contains('hidden')) {
             if (cell.classList.contains('flagged')) {
               cell.classList.remove('flagged');
+              cell.innerHTML = ''
               flags += 1; 
               document.getElementById("flagcount").innerHTML = "Flagi: " + flags;
             } else {
               if (flags > 0) {
                 cell.classList.add('flagged');
+                cell.innerHTML = '<img id="flag" src="src/assets/flag.png" />';
                 flags -= 1; 
                 document.getElementById("flagcount").innerHTML = "Flagi: " + flags;
               } else {
