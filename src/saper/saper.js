@@ -137,6 +137,7 @@
         const [row, col] = position.split('-');
         const mineCell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
         mineCell.classList.remove('hidden');
+        mineCell.innerHTML = '<img id="mine" src="src/assets/bomba.jpg" />';
       });
     }
 
