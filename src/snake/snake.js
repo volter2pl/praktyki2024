@@ -1,8 +1,8 @@
 
-const snakeG =() =>{
+function snakeG(){
 
   var canvas = document.getElementById('game');
-  var context = canvas.getContext('2d');
+  var context = canvas.getContext('Zd');
   var points = 0;
   var grid = 16;
   var count = 0;
@@ -31,12 +31,12 @@ const snakeG =() =>{
   // game loop
   function loop() {
     requestAnimationFrame(loop);
-
-    //Game speed
+  //
+  //Game speed
     if (++count < 6) {
     return;
     }
-
+  //
     count = 0;
     context.clearRect(0,0,canvas.width,canvas.height);
 
@@ -49,8 +49,6 @@ const snakeG =() =>{
     else if (snake.x >= canvas.width) {
       snake.x = 0;
     }
-    
-
     if (snake.y < 0) {
       snake.y = canvas.height - grid;
     }
@@ -99,7 +97,7 @@ const snakeG =() =>{
       }
     });
 
-
+//sterowanie
   document.addEventListener('keydown', function(e) {
     if (e.key === 'a' && snake.dx === 0) {
       snake.dx = -grid;
