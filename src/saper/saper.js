@@ -161,12 +161,16 @@
         const cells = document.querySelectorAll('.cell');
         cells.forEach(cell => {
           cell.classList.remove('flagged');
+          cell.classList.remove('mine');
           cell.classList.add('hidden');
           cell.textContent = '';
         });
+
         timerClear();
-        gameEnded = false;
-        startTimer();
+        
+        board.innerHTML = '';
+        init();
+        gameEnded = false;       
         flags = 20; 
         document.getElementById("flagcount").innerHTML = "Flagi: " + flags; 
       }
