@@ -6,9 +6,9 @@ function Saper(){
         <div>
             <Helmet><script src='src/saper/saper.js'></script></Helmet>
             <div id="board"></div>
-            <p id="timer">Czas: 0</p>
-            <p id="flagcount">Flagi: 0</p>
-            <p id="minecount">Miny: 0</p>
+            <p id="timer">Time: 0</p>
+            <p id="flagcount">Flags: 0</p>
+            <p id="minecount">Mines: 0</p>
             <div id="btnnnbtn"><button id="btnnn">Restart</button></div>
         </div>
     );

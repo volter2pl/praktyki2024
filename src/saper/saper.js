@@ -12,8 +12,8 @@
     const rows = 10;
     const cols = 10;
     const mines = 20;
-    document.getElementById("minecount").innerHTML = "Miny: " + mines;
-    document.getElementById("flagcount").innerHTML = "Flagi: " + mines;
+    document.getElementById("minecount").innerHTML = "Mines: " + mines;
+    document.getElementById("flagcount").innerHTML = "Flags: " + mines;
     let mineLocations = [];
 
     board.innerHTML = '';
@@ -86,13 +86,13 @@
           cell.classList.remove('flagged');
           cell.innerHTML = ''
           flags += 1;
-          document.getElementById("flagcount").innerHTML = "Flagi: " + flags;
+          document.getElementById("flagcount").innerHTML = "Flags: " + flags;
         } else {
           if (flags > 0) {
             cell.classList.add('flagged');
             cell.innerHTML = '<img id="flag" src="src/assets/flag.png" />';
             flags -= 1;
-            document.getElementById("flagcount").innerHTML = "Flagi: " + flags;
+            document.getElementById("flagcount").innerHTML = "Flags: " + flags;
           } else {
             alert('Nie masz już flag!');
           }
@@ -150,14 +150,14 @@
   function startTimer() {
     Time = 1;
     timerInt = setInterval(function () {
-      document.getElementById("timer").innerHTML = "Czas: " + Time;
+      document.getElementById("timer").innerHTML = "Time: " + Time;
       Time++;
     }, 1000);
   }
 
   function timerClear() {
     clearInterval(timerInt);
-    document.getElementById("timer").innerHTML = "Czas: 0";
+    document.getElementById("timer").innerHTML = "Time: 0";
   }
 
   function clearBoard() {
@@ -175,5 +175,5 @@
     init();
     gameEnded = false;
     flags = 20;
-    document.getElementById("flagcount").innerHTML = "Flagi: " + flags;
+    document.getElementById("flagcount").innerHTML = "Flags: " + flags;
   }

@@ -90,8 +90,8 @@ function App() {
        
           <div className="menu">
             <img className="closeMenu" src="https://i.ibb.co/FnsQ9wN/close.png" alt="close" onClick={handleMenuClick}/>
-            <div className="menuContent"><h2>Opcje</h2></div> {/* Add menu content */}
-            <button className='changecolour' onClick={changeTheme}>Zmień kolor</button>
+            <div className="menuContent"><h2>Settings</h2></div> {/* Add menu content */}
+            <button className='changecolour' onClick={changeTheme}>Change colour</button>
           </div>
       </main>
       <footer>
