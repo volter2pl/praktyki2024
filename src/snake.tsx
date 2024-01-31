@@ -1,5 +1,6 @@
 import './snake/snake.css';
 import { Helmet } from 'react-helmet';
+
 function Snake() {
     return (
         <div>
@@ -8,8 +9,9 @@ function Snake() {
             <div className="cialo">
                 <canvas width="400" height="400" id="game"></canvas>
             </div>
-            </div>
-    )
+        </div>
+    );
 
 }
+
 export default Snake;
