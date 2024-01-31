@@ -1,4 +1,4 @@
-var canvas = document.getElementById('game');
+    var canvas = document.getElementById('game');
     var context = canvas.getContext('2d');
     var points = 0;
     var grid = 16;
