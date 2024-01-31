@@ -1,3 +1,4 @@
+
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var points = 0;
@@ -57,20 +58,37 @@ function loop() {
   }
   else if (snake.x >= canvas.width) {
     snake.x = 0;
+
   }
 
-  if (snake.y < 0) {
-    snake.y = canvas.height - grid;
-  }
-  else if (snake.y >= canvas.height) {
-    snake.y = 0;
-  }
+  // game loop
+  function loop() {
+    requestAnimationFrame(loop);
+  //
+  //Game speed
+    if (++count < 6) {
+    return;
+    }
+  //
+    count = 0;
+    context.clearRect(0,0,canvas.width,canvas.height);
 
-  snake.cells.unshift({x: snake.x, y: snake.y});
+    snake.x += snake.dx;
+    snake.y += snake.dy;
 
-  if (snake.cells.length > snake.maxCells) {
-    snake.cells.pop();
-  }
+    if (snake.x < 0) {
+      snake.x = canvas.width - grid;
+    }
+    else if (snake.x >= canvas.width) {
+      snake.x = 0;
+    }
+    if (snake.y < 0) {
+      snake.y = canvas.height - grid;
+    }
+    else if (snake.y >= canvas.height) {
+      snake.y = 0;
+    }
+
 
   // Draw apple image
   context.drawImage(appleImage, apple.x, apple.y, grid - 1, grid - 1);
@@ -103,8 +121,10 @@ function loop() {
 
     context.restore();
 
-    if (cell.x === apple.x && cell.y === apple.y) {
-      snake.maxCells++;
+
+    context.fillStyle = 'red';
+    context.fillRect(apple.x, apple.y, grid-1, grid-1);
+
 
       points++;
       document.getElementById("points").innerHTML = "Punkty: " + points;
@@ -121,14 +141,34 @@ function loop() {
         snake.dx = grid;
         snake.dy = 0;
 
+
+        points++;
+        document.getElementById("points").innerHTML = "Punkty " + points;
         apple.x = getRandomInt(0, 25) * grid;
         apple.y = getRandomInt(0, 25) * grid;
-
-        points = 0;
-        document.getElementById("points").innerHTML = "Punkty " + points;
       }
     }
 });
+
+
+      for (var i = index + 1; i < snake.cells.length; i++) {
+        
+        if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+          snake.x = 160;
+          snake.y = 160;
+          snake.cells = [];
+          snake.maxCells = 4;
+          snake.dx = grid;
+          snake.dy = 0;
+
+          apple.x = getRandomInt(0, 25) * grid;
+          apple.y = getRandomInt(0, 25) * grid;
+
+          points = 0;
+          document.getElementById("points").innerHTML = "Punkty " + points;
+        }
+      }
+    });
 
 
   
@@ -152,7 +192,9 @@ document.addEventListener('keydown', function(e) {
   else if (e.key === 's' || e.which === 40 && snake.dy === 0) {
     snake.dy = grid;
     snake.dx = 0;
+
   }
-});
+  requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
+
