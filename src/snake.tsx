@@ -7,7 +7,6 @@ function Snake() {
             <p id="points">Punkty: 0</p>
             <div className="cialo">
                 <canvas width="400" height="400" id="game"></canvas>
-                    <script src="snake.js"></script>
             </div>
             </div>
     )
