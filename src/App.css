@@ -20,7 +20,9 @@
     border-color: #ffffff;
   }
 }
-
+*{
+  font-family: 'Quantico';
+}
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -103,7 +105,6 @@ footer{
   -webkit-text-stroke: solid 3px #ff2e36;
   text-shadow: 0px 2px 50px #ff000a;
   color: #991616;
-  font-family: 'Quantico', sans-serif;
   font-size: 50px;
   margin: 10px;
   transition: border-color 0.25s;
