@@ -19,9 +19,18 @@
   font-size: 14px;
   cursor: pointer;
   background-color: #7a090c;
-  border-color: #ff000a;
+  border-color: #42d4f5
 }
-
+#flag {
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  
+}
+img {
+  width: 30px;
+  height: 30px;
+}
 .mine {
   background-color: #f00;
   color: #fff;
