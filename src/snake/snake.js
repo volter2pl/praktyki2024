@@ -1,10 +1,8 @@
-
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var points = 0;
 var grid = 16;
 var count = 0;
-
 var snake = {
   x: 160,
   y: 160,
@@ -20,11 +18,12 @@ var apple = {
   x: 320,
   y: 320
 };
-
 var appleImage = new Image();
+
 appleImage.onload = function () {
   loop();
 };
+
 appleImage.src = 'src/assets/apple.png';
 
 var headImage = new Image();
