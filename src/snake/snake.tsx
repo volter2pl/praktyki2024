@@ -1,5 +1,6 @@
 import './snake.css';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import snake from '../snake/snake.js'; 
 import resetGame from '../snake/snake.js'; 
 import React, { useEffect } from 'react';
@@ -12,6 +13,9 @@ const Snake = () => {
       }, []);
 =======
 import SnakeG from './snake.js'
+=======
+import SnakeG from './snake.js';
+>>>>>>> 24bbd229c8f82df51bda5167ae5e10e3506b8b79
 
 const Snake = () => {
     const handleClick = () => {
