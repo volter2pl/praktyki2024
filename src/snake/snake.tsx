@@ -1,5 +1,5 @@
 import './snake.css';
-import SnakeG from './snake.js'
+import SnakeG from './snake.js';
 
 const Snake = () => {
     const handleClick = () => {
