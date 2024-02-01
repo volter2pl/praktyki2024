@@ -1,13 +1,15 @@
-export function getRandomInt(min, max) {
+const SnakeG = () =>{
+
+function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-export const canvas = document.getElementById('game');
-export const context = canvas.getContext('2d');
-export let points = 0;
-export const grid = 16;
-export let count = 0;
+ const canvas = document.getElementById('game');
+ const context = canvas.getContext('2d');
+ let points = 0;
+ const grid = 16;
+ let count = 0;
 
-export const snake = {
+const snake = {
   x: 160,
   y: 160,
 
@@ -19,14 +21,14 @@ export const snake = {
   maxCells: 4
 };
 
-export const apple = {
+const apple = {
   x: 320,
   y: 320
 };
 
 // reszta kodu bez zmian
 
-export default function resetGame() {
+function resetGame() {
   snake.x = 160;
   snake.y = 160;
   snake.cells = [];
@@ -58,3 +60,5 @@ document.addEventListener('keydown', function (e) {
     snake.dx = 0;
   }
 });
+}
+export default SnakeG;
