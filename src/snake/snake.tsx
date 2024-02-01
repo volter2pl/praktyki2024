@@ -1,18 +1,20 @@
-import './snake/snake.css';
-import { Helmet } from 'react-helmet';
+import './snake.css';
+import SnakeG from './snake.js'
 
-function Snake(){
+const Snake = () => {
+    const handleClick = () => {
+        SnakeG();
+      };
     return(
         <div>
-            <Helmet><script src='src/snake/snake.js'></script></Helmet>
             <p id="points">Punkty: 0</p>
             <div className="cialo">
                 <canvas width="400" height="400" id="game"></canvas>
-
+                <button onClick={handleClick}>Graj</button>
             </div>
         </div>
     );
 
-}
+};
 
 export default Snake;
