@@ -1,11 +1,14 @@
-import './saper/saper.css';
-import { Helmet } from 'react-helmet';
+import './saper.css';
+import Saperr from './saper.js';
 
-function Saper(){
+const Saper = () => {
+    const handleClick = () => {
+        Saperr();
+      };
     return(
         <div>
-            <Helmet><script src='src/saper/saper.js'></script></Helmet>
             <div id="board"></div>
+            <button id="start" onClick={handleClick}>Saper</button>
             <p id="timer">Time: 0</p>
             <p id="flagcount">Flags: 0</p>
             <p id="minecount">Mines: 0</p>
