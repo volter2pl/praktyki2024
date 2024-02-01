@@ -8,7 +8,8 @@ function Enig() {
     const [prevLastClicked, setPrevLastClicked] = useState<string | null>(null);
     const [koniec, setKoniec] = useState<string>("");
     const [clickCount, setClickCount] = useState<number>(0);
-
+    clickedAngValue;
+    clickedGreValue;
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
         "It is the mark of an educated mind to be able to entertain a thought without accepting it",
