@@ -13,7 +13,7 @@ const Snake = () => {
             <p id="points">Punkty: 0</p>
             <div className="cialo">
                 <canvas width="400" height="400" id="game"></canvas>
-                <button onClick={handleClick} className='StartGame'>Graj</button>
+                <button onClick={handleClick} className='StartGame'>Play</button>
             </div>
         </div>
     );
