@@ -74,7 +74,7 @@ function Enig() {
             setClickedGreValue(letter);
         }
 
-        setPrevLastClicked(lastClicked); // Przypisanie przedostatniej wartości
+        setPrevLastClicked(lastClicked); 
         setLastClicked(letter);
 
         setClickCount((prevCount) => prevCount + 1);
@@ -82,7 +82,7 @@ function Enig() {
 
     useEffect(() => {
         if (clickCount === 2) {
-            // Replace logic based on last and prev last clicked values
+
             let replacedKoniec = koniec;
             if (prevLastClicked) {
                 const regex = new RegExp(prevLastClicked, 'g');
@@ -90,7 +90,6 @@ function Enig() {
             }
             setKoniec(replacedKoniec);
 
-            // Reset click count and last clicked values
             setClickCount(0);
             setLastClicked(null);
             setPrevLastClicked(null);
@@ -118,7 +117,11 @@ function Enig() {
             {letter[1]}
         </div>
     ));
-
+    useEffect(() => {
+        if (koniec === cytaty[0].toUpperCase()||koniec === cytaty[1].toUpperCase()||koniec === cytaty[2].toUpperCase()||koniec === cytaty[3].toUpperCase()||koniec === cytaty[4].toUpperCase()||koniec === cytaty[5].toUpperCase()||koniec === cytaty[6].toUpperCase()||koniec === cytaty[7].toUpperCase()||koniec === cytaty[8].toUpperCase()||koniec === cytaty[9].toUpperCase()){
+            alert('wygrałeś');
+        }
+    }, [koniec]);
     return (
         <>
             <div className="Enigma_D">
