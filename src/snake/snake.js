@@ -26,7 +26,7 @@ export const apple = {
 
 // reszta kodu bez zmian
 
-export function resetGame() {
+export default function resetGame() {
   snake.x = 160;
   snake.y = 160;
   snake.cells = [];
