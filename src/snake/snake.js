@@ -1,3 +1,7 @@
+import snakehead from './assets/snakehead.png'; 
+import snakebody from './assets/snakebody.png'; 
+import ImgApple from './assets/apple.png'; 
+
 const SnakeG = () =>{
   var canvas = document.getElementById('game');
   var context = canvas.getContext('2d');
@@ -25,13 +29,13 @@ const SnakeG = () =>{
   appleImage.onload = function () {
     loop();
   };
-  appleImage.src = 'src/assets/apple.png';
+  appleImage.src = ImgApple;
 
   var headImage = new Image();
-  headImage.src = 'src/assets/snakehead.png';
+  headImage.src = snakehead;
 
   var bodyImage = new Image();
-  bodyImage.src = 'src/assets/snakebody.png';
+  bodyImage.src = snakebody;
 
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
