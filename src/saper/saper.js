@@ -1,11 +1,6 @@
-import bombImg from '../assets/bomba.jpg';
-import flagImg from '../assets/flag.png';
-  
-const Saperr = () =>{
   const board = document.getElementById('board');
   let gameEnded = false;
   let flags = 20;
-  let timerInt;
 
   init();
 
@@ -95,7 +90,7 @@ const Saperr = () =>{
         } else {
           if (flags > 0) {
             cell.classList.add('flagged');
-            cell.innerHTML = "<img id='flag' src='" + flagImg + "'/>";
+            cell.innerHTML = '<img id="flag" src="src/assets/flag.png" />';
             flags -= 1;
             document.getElementById("flagcount").innerHTML = "Flags: " + flags;
           } else {
@@ -142,7 +137,7 @@ const Saperr = () =>{
         const [row, col] = position.split('-');
         const mineCell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
         mineCell.classList.remove('hidden');
-        mineCell.innerHTML = '<img id="mine" src="' + bombImg + '"/>';
+        mineCell.innerHTML = '<img id="mine" src="src/assets/bomba.jpg" />';
       });
     }
 
@@ -153,7 +148,7 @@ const Saperr = () =>{
   }
 
   function startTimer() {
-    var Time = 1;
+    Time = 1;
     timerInt = setInterval(function () {
       document.getElementById("timer").innerHTML = "Time: " + Time;
       Time++;
@@ -182,6 +177,3 @@ const Saperr = () =>{
     flags = 20;
     document.getElementById("flagcount").innerHTML = "Flags: " + flags;
   }
-}
-
-export default Saperr;
