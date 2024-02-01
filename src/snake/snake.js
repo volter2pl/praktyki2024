@@ -1,6 +1,6 @@
-import snakehead from './assets/snakehead.png'; 
-import snakebody from './assets/snakebody.png'; 
-import ImgApple from './assets/apple.png'; 
+import snakehead from '../assets/snakehead.png'; 
+import snakebody from '../assets/snakebody.png'; 
+import ImgApple from '../assets/apple.png'; 
 
 const SnakeG = () =>{
   var canvas = document.getElementById('game');
