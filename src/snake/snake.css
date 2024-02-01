@@ -2,8 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    position:relative;
 }
 #game {
     border: 1px solid red;
+}
+.StartGame{
+    position:absolute;
+    align-self:center;
+    color: #ff000a;
+    background-color: rgb(31, 31, 31);
+    border-radius: 8px;
+    border: 1px solid #ff2e36;
+    padding: 10px;
+    transition: border-color 0.25s;
+    font-size: 1em;
+    box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
 }
