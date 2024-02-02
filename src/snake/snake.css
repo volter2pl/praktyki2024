@@ -7,9 +7,24 @@
 #game {
     border: 1px solid red;
 }
+.maindiv{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.StartGameDiv{
+    border-radius: 8px;
+    width: 40%;
+    height: 500px;
+    background-color: #170020;
+    position: absolute;
+    align-self: center;
+}
 .StartGame{
     position:absolute;
-    align-self:center;
+    top: 50%;
     color: #ff000a;
     background-color: rgb(31, 31, 31);
     border-radius: 8px;

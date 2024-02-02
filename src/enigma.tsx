@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './enigma.css';
 
 function Enig() {
+    const [isGameStarted, setIsGameStarted] = useState(false);
     const [clickedAngValue, setClickedAngValue] = useState<string | null>(null);
     const [clickedGreValue, setClickedGreValue] = useState<string | null>(null);
     const [lastClicked, setLastClicked] = useState<string | null>(null);
@@ -10,6 +11,7 @@ function Enig() {
     const [clickCount, setClickCount] = useState<number>(0);
     clickedAngValue;
     clickedGreValue;
+
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
         "It is the mark of an educated mind to be able to entertain a thought without accepting it",
@@ -53,19 +55,25 @@ function Enig() {
     ];
 
     useEffect(() => {
-        const wylosowane = cytaty[Math.floor(Math.random() * 10)].toUpperCase();
-        let koniecTmp = "";
-        for (let i = 0; i < wylosowane.length; i++) {
-            const letter = wylosowane[i];
-            const foundLetter = letters.find(item => item[0] === letter);
-            if (foundLetter) {
-                koniecTmp += foundLetter[1];
-            } else {
-                koniecTmp += letter;
+        if (isGameStarted) {
+            const wylosowane = cytaty[Math.floor(Math.random() * 10)].toUpperCase();
+            let koniecTmp = "";
+            for (let i = 0; i < wylosowane.length; i++) {
+                const letter = wylosowane[i];
+                const foundLetter = letters.find(item => item[0] === letter);
+                if (foundLetter) {
+                    koniecTmp += foundLetter[1];
+                } else {
+                    koniecTmp += letter;
+                }
             }
+            setKoniec(koniecTmp);
         }
-        setKoniec(koniecTmp);
-    }, []);
+    }, [isGameStarted]);
+
+    const startGame = () => {
+        setIsGameStarted(true);
+    };
 
     const handleClick = (letter: string, isAngSection: boolean) => {
         if (isAngSection) {
@@ -82,7 +90,6 @@ function Enig() {
 
     useEffect(() => {
         if (clickCount === 2) {
-
             let replacedKoniec = koniec;
             if (prevLastClicked) {
                 const regex = new RegExp(prevLastClicked, 'g');
@@ -95,6 +102,12 @@ function Enig() {
             setPrevLastClicked(null);
         }
     }, [clickCount, koniec, lastClicked, prevLastClicked]);
+
+    useEffect(() => {
+        if (koniec === cytaty[0].toUpperCase() || koniec === cytaty[1].toUpperCase() || koniec === cytaty[2].toUpperCase() || koniec === cytaty[3].toUpperCase() || koniec === cytaty[4].toUpperCase() || koniec === cytaty[5].toUpperCase() || koniec === cytaty[6].toUpperCase() || koniec === cytaty[7].toUpperCase() || koniec === cytaty[8].toUpperCase() || koniec === cytaty[9].toUpperCase()) {
+            alert('wygrałeś');
+        }
+    }, [koniec]);
 
     const buttons = letters.map((letter) => (
         <div
@@ -117,22 +130,20 @@ function Enig() {
             {letter[1]}
         </div>
     ));
-    useEffect(() => {
-        if (koniec === cytaty[0].toUpperCase()||koniec === cytaty[1].toUpperCase()||koniec === cytaty[2].toUpperCase()||koniec === cytaty[3].toUpperCase()||koniec === cytaty[4].toUpperCase()||koniec === cytaty[5].toUpperCase()||koniec === cytaty[6].toUpperCase()||koniec === cytaty[7].toUpperCase()||koniec === cytaty[8].toUpperCase()||koniec === cytaty[9].toUpperCase()){
-            alert('wygrałeś');
-        }
-    }, [koniec]);
+
     return (
         <>
-            <div className="Enigma_D">
-                <h1 className="Sifer">{koniec}</h1>
-                <div className="Ang">
-                    {buttons}
+            {!isGameStarted ? (
+                <div className="StartGame" onClick={startGame}>
+                    Start Game
                 </div>
-                <div className="Gre">
-                    {buttons2}
+            ) : (
+                <div className="Enigma_D">
+                    <h1 className="Sifer">{koniec}</h1>
+                    <div className="Ang">{buttons}</div>
+                    <div className="Gre">{buttons2}</div>
                 </div>
-            </div>
+            )}
         </>
     );
 }

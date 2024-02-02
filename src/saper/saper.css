@@ -6,10 +6,20 @@
   align-items: center;
   justify-content: center;
 }
-.StartGameDivv{
+.maindiv{
+  margin: 0;
+  padding: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.StartGameDiv{
+  border-radius: 8px;
+  width: 40%;
+  height: 500px;
+  background-color: #170020;
+  position: absolute;
+  align-self: center;
 }
 .StartGame{
   position:absolute;
@@ -23,7 +33,6 @@
   font-size: 1em;
   box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
 }
-
 .cell {
   width: 30px;
   height: 30px;
