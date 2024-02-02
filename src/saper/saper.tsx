@@ -5,12 +5,12 @@ const Saper = () => {
 
     const handleClick = () => {
         Saperr();
-        const Play = document.querySelector(".StartGame") as HTMLElement;
+        const Play = document.querySelector(".StartGameDiv") as HTMLElement;
         Play.style.display = "none";
       };
     return(
-        <div>
-            <div className='StartGameDivv'><button onClick={handleClick} className='StartGame'>Start</button></div>
+        <div className='maindiv'>
+            <div className='StartGameDiv'><button onClick={handleClick} className='StartGame'>Play</button></div>
             <div>
                 <div>
                     <div id="board"></div>
