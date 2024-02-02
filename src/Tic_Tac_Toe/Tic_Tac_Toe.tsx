@@ -14,6 +14,5 @@ function Tic_Tac_Toe() {
             <button onClick={handleClick} id="starttictactoe" className='StartGame'>Play</button>
         </div>
     )
-
 }
 export default Tic_Tac_Toe;
