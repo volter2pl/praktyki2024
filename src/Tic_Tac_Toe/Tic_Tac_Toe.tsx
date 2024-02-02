@@ -11,7 +11,7 @@ function Tic_Tac_Toe() {
       };
     return (
         <div id="home">
-            <button onClick={handleClick} className='StartGame'>Play</button>
+            <button onClick={handleClick} id="starttictactoe" className='StartGame'>Play</button>
         </div>
     )
 
