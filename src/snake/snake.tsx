@@ -6,7 +6,6 @@ const Snake = () => {
         SnakeG();
         const Play = document.querySelector(".StartGame") as HTMLElement;
         Play.style.display = "none";
-        
       };
     return(
         <div>
