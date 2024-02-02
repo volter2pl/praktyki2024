@@ -1,5 +1,5 @@
-import './Tic_Tac_Toe/circle.css';
-import TTTG from'./circle.js'
+import './circle.css';
+import TTTG from './circle.js'
 
 
 function Tic_Tac_Toe() {
