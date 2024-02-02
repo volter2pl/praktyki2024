@@ -3,7 +3,32 @@
     display: flex;
     justify-content: space-between;
 }
-
+.maindiv{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.StartGameDiv{
+    border-radius: 8px;
+    width: 50%;
+    height: 700px;
+    background-color: #170020;
+    position: absolute;
+}
+.StartGame{
+    position:absolute;
+    top: 50%;
+    color: #ff000a;
+    background-color: rgb(31, 31, 31);
+    border-radius: 8px;
+    border: 1px solid #ff2e36;
+    padding: 10px;
+    transition: border-color 0.25s;
+    font-size: 1em;
+    box-shadow: inset 0px 0px 5px 5px rgba(255,0,10,0.5), 0px 2px 20px 5px rgba(255,0,10,0.5);
+}
 .game-board{
     width: 200px;
     height: 200px;
