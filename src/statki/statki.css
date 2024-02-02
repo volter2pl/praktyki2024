@@ -13,9 +13,10 @@
 .StartGameDiv{
     border-radius: 8px;
     width: 50%;
-    height: 700px;
+    height: 600px;
     background-color: #170020;
     position: absolute;
+    align-self: center;
 }
 .StartGame{
     position:absolute;
@@ -123,5 +124,5 @@
 }
 
 .empty{
-    background-color: grey !important;
+    background-color: whitesmoke !important;
 }
