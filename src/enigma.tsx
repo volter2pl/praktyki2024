@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './enigma.css';
 
 function Enig() {
@@ -9,6 +9,8 @@ function Enig() {
     const [prevLastClicked, setPrevLastClicked] = useState<string | null>(null);
     const [koniec, setKoniec] = useState<string>("");
     const [clickCount, setClickCount] = useState<number>(0);
+    clickedAngValue;
+    clickedGreValue;
 
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
