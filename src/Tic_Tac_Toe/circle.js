@@ -1,5 +1,5 @@
 
-const TTTG =()=>{
+const tttg =()=>{
     let home = document.getElementById('home')
     let board = document.createElement('div')
     board.classList.add('board')
@@ -202,4 +202,4 @@ const TTTG =()=>{
         });
         page.append(button);
 }
-export default TTTG;
+export default tttg;

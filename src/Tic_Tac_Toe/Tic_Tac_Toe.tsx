@@ -1,10 +1,10 @@
 import './circle.css';
-import TTTG from './circle.js'
+import tttg from './circle'
 
 
 function Tic_Tac_Toe() {
     const handleClick = () => {
-        TTTG();
+        tttg();
         const Play = document.querySelector(".StartGame") as HTMLElement;
         Play.style.display = "none";
         
