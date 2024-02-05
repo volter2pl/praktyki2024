@@ -105,7 +105,7 @@ function Enig() {
 
     useEffect(() => {
         if (koniec === cytaty[0].toUpperCase() || koniec === cytaty[1].toUpperCase() || koniec === cytaty[2].toUpperCase() || koniec === cytaty[3].toUpperCase() || koniec === cytaty[4].toUpperCase() || koniec === cytaty[5].toUpperCase() || koniec === cytaty[6].toUpperCase() || koniec === cytaty[7].toUpperCase() || koniec === cytaty[8].toUpperCase() || koniec === cytaty[9].toUpperCase()) {
-            alert('wygrałeś');
+            alert('You won!');
         }
     }, [koniec]);
 

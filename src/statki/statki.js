@@ -185,14 +185,14 @@ const Statkii = () =>{
         if (playerTurn === undefined)
         {
             if(optionContainer.children.length != 0){
-                infoDisplay.textContent = 'Proszę najpierw wystawić wszystkie swoje statki'
+                infoDisplay.textContent = 'Please place all your ships first'
             }
             else{
                 const allBoardBlocks = document.querySelectorAll('#computer div')
                 allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
             playerTurn = true
-            turnDisplay.textContent = 'Zaczynasz!'
-            infoDisplay.textContent = 'Gra START'
+            turnDisplay.textContent = 'you start!'
+            infoDisplay.textContent = 'game START'
             }
         }
     }
@@ -208,7 +208,7 @@ const Statkii = () =>{
         if(!gameOver){
             if(e.target.classList.contains('taken')){
                 e.target.classList.add('boom')
-                infoDisplay.textContent = "Statek został trafiony!"
+                infoDisplay.textContent = "the ship was hit!"
                 let classes = Array.from(e.target.classList)
                 classes = classes.filter(className => className !== 'block')
                 classes = classes.filter(className => className !== 'boom')
@@ -218,7 +218,7 @@ const Statkii = () =>{
             }
             if (!e.target.classList.contains('taken'))
             {
-                infoDisplay.textContent = "Pudło!"
+                infoDisplay.textContent = "you missed!"
                 e.target.classList.add('empty')
             }
             playerTurn = false
@@ -233,8 +233,8 @@ const Statkii = () =>{
     function computerGo(){
         if(!gameOver)
         {
-            turnDisplay.textContent = 'Tura Komputera'
-            infoDisplay.textContent = 'Komputer myśli nad ruchem...'
+            turnDisplay.textContent = 'computer turn'
+            infoDisplay.textContent = 'The computer thinks about move...'
 
             setTimeout(() => {
                 let randomGo = Math.floor(Math.random() * width * width)
@@ -250,7 +250,7 @@ const Statkii = () =>{
                 !allBoardBlocks[randomGo].classList.contains('boom')
                 ){
                     allBoardBlocks[randomGo].classList.add('boom')
-                    infoDisplay.textContent = 'Komputer trafił twój statek!'
+                    infoDisplay.textContent = 'The computer has hit your ship!'
                     let classes = Array.from(allBoardBlocks[randomGo].classList)
                     classes = classes.filter(className => className !== 'block')
                     classes = classes.filter(className => className !== 'boom')
@@ -259,15 +259,15 @@ const Statkii = () =>{
                     checkScore('computer', computerHits, computerSunkShips)
                 }
                 else{
-                    infoDisplay.textContent = 'Pudło ze strony komputera'
+                    infoDisplay.textContent = 'the computer missed!'
                     allBoardBlocks[randomGo].classList.add('empty')
                 }
             }, 3000)
 
             setTimeout(() => {
                 playerTurn = true
-                turnDisplay.textContent = 'Twoja tura!'
-                infoDisplay.textContent = 'Spróbuj trafić przeciwnika'
+                turnDisplay.textContent = 'your turn!'
+                infoDisplay.textContent = 'Try to hit your opponent'
                 const allBoardBlocks = document.querySelectorAll('#computer div')
                 allBoardBlocks.forEach(block => block.addEventListener('click', handleClick))
             }, 6000);
@@ -283,11 +283,11 @@ const Statkii = () =>{
                 userHits.filter(storedShipName => storedShipName === shipName).length ===shipLength
             ){
                 if(user === 'player'){
-                    infoDisplay.textContent = `Zatopiłeś ${shipName} Komputera!`
+                    infoDisplay.textContent = `you sank ${shipName} computer!`
                     playerHits = userHits.filter(storedShipName => storedShipName !== shipName)
                 }
                 if(user === 'computer'){
-                    infoDisplay.textContent = `Zatopił ${shipName} Gracza`
+                    infoDisplay.textContent = `sunk ${shipName} player`
                     computerHits = userHits.filter(storedShipName => storedShipName !== shipName)
                 }
                 userSunkShips.push(shipName)
@@ -304,10 +304,10 @@ const Statkii = () =>{
         console.log('playerSunkShips', playerSunkShips)
 
         if(playerSunkShips.length === 5) {
-            infoDisplay.textContent = 'Zatopiłeś wszystkie statki wroga. WYGRAŁEŚ!!!!'
+            infoDisplay.textContent = 'You have sunk all the enemy ships. YOU WON!!!!'
         }
         if(computerSunkShips.length === 5) {
-            infoDisplay.textContent = 'Komputer zatopił wszystkie twoje statki. PORAŻKA!!!!'
+            infoDisplay.textContent = 'The computer sunk all your ships. FAILURE!!!!'
             gameOver = true
         }
     }

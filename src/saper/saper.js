@@ -62,7 +62,7 @@ const Saperr = () =>{
       if (cell.classList.contains('hidden') && !cell.classList.contains('flagged')) {
         if (cell.classList.contains('mine')) {
           revealMines();
-          alert('Przegrałeś!');
+          alert('You lost!');
           clearInterval(timerInt);
           gameEnded = true;
         } else {
@@ -74,7 +74,7 @@ const Saperr = () =>{
             revealNeighbors(row, col);
           }
           if (checkWin()) {
-            alert('Wygrałeś!');
+            alert('You won!');
             clearInterval(timerInt);
             gameEnded = true;
           }
@@ -99,7 +99,7 @@ const Saperr = () =>{
             flags -= 1;
             document.getElementById("flagcount").innerHTML = "Flags: " + flags;
           } else {
-            alert('Nie masz już flag!');
+            alert('You dont have any flags anymore!');
           }
         }
       }
