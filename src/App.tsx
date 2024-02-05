@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Statki from './statki/statki.tsx';
 import Saper from './saper/saper.tsx';
 import Snake from './snake/snake.tsx';
-import Tic_Tac_Toe from './Tic_Tac_Toe.tsx';
+import Tic_Tac_Toe from './Tic_Tac_Toe/Tic_Tac_Toe.tsx';
 import changeTheme from './Theme.tsx';
 import Enig from './enigma.tsx';
 import { useState } from 'react';
