@@ -9,9 +9,9 @@ function Enig() {
     const [prevLastClicked, setPrevLastClicked] = useState<string | null>(null);
     const [koniec, setKoniec] = useState<string>("");
     const [clickCount, setClickCount] = useState<number>(0);
-    clickedAngValue;
-    clickedGreValue;
-
+    const [shuffledGreButtons, setShuffledGreButtons] = useState<JSX.Element[]>([]);
+    clickedAngValue
+    clickedGreValue
     const cytaty = [
         "Knowing yourself is the beginning of all wisdom",
         "It is the mark of an educated mind to be able to entertain a thought without accepting it",
@@ -109,6 +109,14 @@ function Enig() {
         }
     }, [koniec]);
 
+    useEffect(() => {
+        if (isGameStarted) {
+            const shuffledButtons2 = buttons2.sort(() => Math.random() - 0.5);
+            setShuffledGreButtons(shuffledButtons2);
+        }
+    }, [isGameStarted]);
+
+    // Tworzymy tablicę przycisków dla sekcji Ang
     const buttons = letters.map((letter) => (
         <div
             key={letter[0]}
@@ -120,6 +128,7 @@ function Enig() {
         </div>
     ));
 
+    // Tworzymy tablicę przycisków dla sekcji Gre
     const buttons2 = letters.map((letter) => (
         <div
             key={letter[1]}
@@ -141,7 +150,7 @@ function Enig() {
                 <div className="Enigma_D">
                     <h1 className="Sifer">{koniec}</h1>
                     <div className="Ang">{buttons}</div>
-                    <div className="Gre">{buttons2}</div>
+                    <div className="Gre">{shuffledGreButtons}</div>
                 </div>
             )}
         </>
