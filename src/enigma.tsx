@@ -135,7 +135,7 @@ function Enig() {
         <>
             {!isGameStarted ? (
                 <div className="StartGame" onClick={startGame}>
-                    Start Game
+                    Play
                 </div>
             ) : (
                 <div className="Enigma_D">
