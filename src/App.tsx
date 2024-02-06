@@ -12,12 +12,13 @@ import waz from './assets/waz.jpg';
 import bomba from './assets/bomba.jpg';
 import tik from './assets/tik.png';
 import enigma from './assets/enigma.jpg';
-
+import { useCookies } from 'react-cookie';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
-
+  const [cookies, setCookie] = useCookies(['theme']);
+  if (!cookies.theme) setCookie('theme', 'red', { maxAge: 604800});
 
 
   const handleClick = (gameId : number) => {
@@ -57,6 +58,12 @@ function App() {
     window.location.reload();
   };
 
+  const changeThemeBut = () => {
+    console.log(cookies.theme);
+    setCookie("theme", changeTheme(cookies.theme));
+    console.log(cookies.theme);
+  }
+
   return (
     <>
       <header>
@@ -87,11 +94,10 @@ function App() {
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-       
           <div className="menu">
             <img className="closeMenu" src="https://i.ibb.co/FnsQ9wN/close.png" alt="close" onClick={handleMenuClick}/>
             <div className="menuContent"><h2>Settings</h2></div> {/* Add menu content */}
-            <button className='changecolour' onClick={changeTheme}>Change colour</button>
+            <button className='changecolour' onClick={changeThemeBut}>Change colour</button>
           </div>
       </main>
       <footer>
