@@ -6,8 +6,9 @@ function changeTheme(){
     const logoElement = document.querySelector(".Logo") as HTMLElement;
     const buttonElement = document.querySelector(".changecolour") as HTMLElement;
     const buttonElementSec = document.querySelector(".zebatka") as HTMLElement;
-    const menu = document.querySelector(".menu") as HTMLElement;
+    const menu = document.querySelector(".menu") as HTMLElement as HTMLElement;
     const enigmabuttons = document.querySelectorAll(".L_buttons") as NodeListOf<HTMLElement>;
+    const playbuttons = document.querySelector('.StartGame') as HTMLElement;
    
     const snake = document.getElementById('game') as HTMLElement;
     
@@ -41,8 +42,11 @@ function changeTheme(){
       menu.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
       menu.style.borderColor = isViolet ? "" : "violet";
 
-      
-      
+      playbuttons.style.boxShadow = isViolet ? "" : "inset 0px 0px 10px 5px rgba(255, 0, 255, 0.5), 0px 2px 50px 10px rgba(255, 0, 255, 0.5)";
+      playbuttons.style.borderColor = isViolet ? "" : "violet";
+      playbuttons.style.color = isViolet ? "" : "violet";
+
+
       snake.style.borderColor = isViolet ? "" : "violet";
       
       sectionElements.forEach((element) => {
@@ -60,6 +64,7 @@ function changeTheme(){
         element.style.color = isViolet ? "" : "violet";
       });
     }
-};
+}
+
 
 export default changeTheme;
