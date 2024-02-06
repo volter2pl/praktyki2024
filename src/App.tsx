@@ -20,7 +20,6 @@ function App() {
   const [cookies, setCookie] = useCookies(['theme']);
   if (!cookies.theme) setCookie('theme', 'red', { maxAge: 604800});
 
-
   const handleClick = (gameId : number) => {
     const section = document.querySelector("section") as HTMLElement;
     section.style.display = "none";
@@ -60,7 +59,7 @@ function App() {
 
   const changeThemeBut = () => {
     console.log(cookies.theme);
-    setCookie("theme", changeTheme(cookies.theme));
+    setCookie("theme", changeTheme(cookies.theme), { maxAge: 604800});
     console.log(cookies.theme);
   }
 
