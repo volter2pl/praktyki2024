@@ -13,6 +13,7 @@ import bomba from './assets/bomba.jpg';
 import tik from './assets/tik.png';
 import enigma from './assets/enigma.jpg';
 import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
@@ -58,10 +59,15 @@ function App() {
   };
 
   const changeThemeBut = () => {
-    console.log(cookies.theme);
-    setCookie("theme", changeTheme(cookies.theme), { maxAge: 604800});
-    console.log(cookies.theme);
+    setCookie("theme", changeTheme(cookies.theme === "red" ? "violet" : "red" ), { maxAge: 604800});
   }
+  const changeThemeLoad = () => {
+    setCookie("theme", changeTheme(cookies.theme), { maxAge: 604800});
+  }
+
+  useEffect(() => {
+     changeThemeLoad();
+  }, []);
 
   return (
     <>
@@ -105,5 +111,4 @@ function App() {
     </>
   )
 }
-
 export default App;
