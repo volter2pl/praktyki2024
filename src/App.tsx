@@ -16,32 +16,32 @@ import enigma from './assets/enigma.jpg';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
+  const [isMenuOpen, setIsMenuOpen] = useState(true); 
 
 
 
-  const handleClick = (gameId : number) => {
+  const handleClick = (gameId: number) => {
     const section = document.querySelector("section") as HTMLElement;
-    section.style.display = "none";
+    section.classList.add("hidden-section");
+  
+    setTimeout(() => {
+      section.style.display = "none";
+      section.classList.remove("hidden-section");
+    }, 500);
 
-    if (gameId === 1){
+    if (gameId === 1) {
       setMessage(<Statki />);
-    }
-    
-    if (gameId === 2){
+    } else if (gameId === 2) {
       setMessage(<Snake />);
-    }
-
-    if (gameId === 3){
+    } else if (gameId === 3) {
       setMessage(<Saper />);
-    }
-    if (gameId === 4){
+    } else if (gameId === 4) {
       setMessage(<Tic_Tac_Toe />);
-    }
-    if (gameId === 5){
+    } else if (gameId === 5) {
       setMessage(<Enig />);
     }
   };
+  
   
   const handleMenuClick = () => {
     const menu = document.querySelector(".menu") as HTMLElement;
@@ -50,7 +50,7 @@ function App() {
     } else {
       menu.style.display = "block";
     }
-    setIsMenuOpen(isMenuOpen);  //Toggle menu state
+    setIsMenuOpen(isMenuOpen);
   };
 
   const handleHeaderClick = () => {

@@ -151,3 +151,7 @@ footer{
 .zebatka:hover {
   transform: rotate(360deg);
 }
+.hidden-section {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
