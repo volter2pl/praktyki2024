@@ -14,6 +14,8 @@ import tik from './assets/tik.png';
 import enigma from './assets/enigma.jpg';
 import { useCookies } from 'react-cookie';
 import { useEffect } from 'react';
+import zebatka from './assets/zebatka.png';
+import close from './assets/close.png';
 
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
@@ -100,13 +102,13 @@ function App() {
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
           <div className="menu">
-            <img className="closeMenu" src="https://i.ibb.co/FnsQ9wN/close.png" alt="close" onClick={handleMenuClick}/>
+            <img className="closeMenu" src={close} alt="close" onClick={handleMenuClick}/>
             <div className="menuContent"><h2>Settings</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeThemeBut}>Change colour</button>
           </div>
       </main>
       <footer>
-        <img className='zebatka' src="https://i.ibb.co/Dgy9jC2/zebatka.png" alt="zębatka" onClick={handleMenuClick}></img>
+        <img className='zebatka' src={zebatka} alt="zębatka" onClick={handleMenuClick}></img>
       </footer>
     </>
   )

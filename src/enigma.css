@@ -64,4 +64,6 @@
   .StartGame:hover{
     cursor: pointer;
   }
- 
+  .L_buttons.clicked{
+  border: yellow 1px solid;
+ }

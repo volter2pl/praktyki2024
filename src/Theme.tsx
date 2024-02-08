@@ -6,7 +6,7 @@ function changeTheme(colouur : string){
     const logoElement = document.querySelector(".Logo") as HTMLElement;
     const buttonElement = document.querySelector(".changecolour") as HTMLElement;
     const buttonElementSec = document.querySelector(".zebatka") as HTMLElement;
-    const menu = document.querySelector(".menu") as HTMLElement;
+    const menu = document.querySelector(".menu") as HTMLElement as HTMLElement;
     const enigmabuttons = document.querySelectorAll(".L_buttons") as NodeListOf<HTMLElement>;
     
     if (colouur === "violet"){
@@ -97,6 +97,7 @@ function changeTheme(colouur : string){
       });
       return "red";
     }
-};
+}
+
 
 export default changeTheme;
