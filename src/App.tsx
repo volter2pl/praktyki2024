@@ -94,7 +94,7 @@ function App() {
             <img className="closeMenu" src={close} alt="close" onClick={handleMenuClick}/>
             <div className="menuContent"><h2>Settings</h2></div> {/* Add menu content */}
             <button className='changecolour' onClick={changeTheme}>Change colour</button>
-            <div className='Autors'><small>The websitewas created by Adrian Wojdak, Bertrand Bak, Mateusz Szymczak, Oliwier Wielgosz, Piotr Koszewski, Witold Tomaszewski.</small></div>
+            <div className='Autors'><small>The website was created by Adrian Wojdak, Bertrand Bak, Mateusz Szymczak, Oliwier Wielgosz, Piotr Koszewski, Witold Tomaszewski.</small></div>
           </div>
       </main>
       <footer>
