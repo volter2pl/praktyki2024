@@ -151,3 +151,10 @@ footer{
 .zebatka:hover {
   transform: rotate(360deg);
 }
+.Autors{
+  color: white;
+  align-items: center;
+  padding-top: 190px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
