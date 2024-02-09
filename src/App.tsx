@@ -12,38 +12,39 @@ import waz from './assets/waz.jpg';
 import bomba from './assets/bomba.jpg';
 import tik from './assets/tik.png';
 import enigma from './assets/enigma.jpg';
+import { useCookies } from 'react-cookie';
+import { useEffect } from 'react';
 import zebatka from './assets/zebatka.png';
 import close from './assets/close.png';
 
-
 function App() {
   const [message, setMessage] = useState<React.ReactNode>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(true); // Add state for menu
+  const [isMenuOpen, setIsMenuOpen] = useState(true); 
+  const [cookies, setCookie] = useCookies(['theme']);
+  if (!cookies.theme) setCookie('theme', 'red', { maxAge: 604800});
 
-
-
-  const handleClick = (gameId : number) => {
+  const handleClick = (gameId: number) => {
     const section = document.querySelector("section") as HTMLElement;
-    section.style.display = "none";
+    section.classList.add("hidden-section");
+  
+    setTimeout(() => {
+      section.style.display = "none";
+      section.classList.remove("hidden-section");
+    }, 500);
 
-    if (gameId === 1){
+    if (gameId === 1) {
       setMessage(<Statki />);
-    }
-    
-    if (gameId === 2){
+    } else if (gameId === 2) {
       setMessage(<Snake />);
-    }
-
-    if (gameId === 3){
+    } else if (gameId === 3) {
       setMessage(<Saper />);
-    }
-    if (gameId === 4){
+    } else if (gameId === 4) {
       setMessage(<Tic_Tac_Toe />);
-    }
-    if (gameId === 5){
+    } else if (gameId === 5) {
       setMessage(<Enig />);
     }
   };
+  
   
   const handleMenuClick = () => {
     const menu = document.querySelector(".menu") as HTMLElement;
@@ -52,12 +53,23 @@ function App() {
     } else {
       menu.style.display = "block";
     }
-    setIsMenuOpen(isMenuOpen);  //Toggle menu state
+    setIsMenuOpen(isMenuOpen);
   };
 ``
   const handleHeaderClick = () => {
     window.location.reload();
   };
+
+  const changeThemeBut = () => {
+    setCookie("theme", changeTheme(cookies.theme === "red" ? "violet" : "red" ), { maxAge: 604800});
+  }
+  const changeThemeLoad = () => {
+    setCookie("theme", changeTheme(cookies.theme), { maxAge: 604800});
+  }
+
+  useEffect(() => {
+     changeThemeLoad();
+  }, []);
 
   return (
     <>
@@ -89,7 +101,6 @@ function App() {
       </section>
       <main className={isMenuOpen ? 'menuOpen' : ''} >
         {message}
-       
           <div className="menu">
             <img className="closeMenu" src={close} alt="close" onClick={handleMenuClick}/>
             <div className="menuContent"><h2>Settings</h2></div> {/* Add menu content */}
@@ -103,5 +114,4 @@ function App() {
     </>
   )
 }
-
 export default App;
